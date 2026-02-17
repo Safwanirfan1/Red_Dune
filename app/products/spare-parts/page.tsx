@@ -10,7 +10,6 @@ import {
     Settings, CheckCircle, ChevronDown
 } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const FAQS = [
@@ -43,10 +42,9 @@ export default function SparePartsPage() {
                 </div>
 
                 <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl pt-20">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
+                    <div
+                        data-aos="fade-up"
+                        data-aos-duration="1000"
                     >
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-[family-name:var(--font-playfair)] font-bold text-white leading-tight mb-6">
                             Premium Genuine Spare Parts <br />
@@ -54,15 +52,17 @@ export default function SparePartsPage() {
                                 German & Luxury Cars
                             </span>
                         </h1>
-                        <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                        <p className="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                             Experience the pinnacle of performance with authentic components sourced for reliability, safety, and durability.
                         </p>
-                        <Link href="#contact">
-                            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-none font-semibold tracking-wide transition-all duration-300 transform hover:scale-105 shadow-xl shadow-primary/20">
-                                INQUIRE NOW
-                            </Button>
-                        </Link>
-                    </motion.div>
+                        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                            <Link href="#contact">
+                                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-none font-semibold tracking-wide transition-all duration-300 transform hover:scale-105 shadow-xl shadow-primary/20">
+                                    INQUIRE NOW
+                                </Button>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/50">
@@ -74,7 +74,7 @@ export default function SparePartsPage() {
             <section className="py-24 bg-background">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col lg:flex-row items-center gap-16">
-                        <div className="lg:w-1/2 space-y-8">
+                        <div className="lg:w-1/2 space-y-8" data-aos="fade-right" data-aos-duration="800">
                             <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold mb-4">
                                 Trusted Genuine <br />
                                 <span className="text-primary">Spare Parts in Dubai</span>
@@ -90,7 +90,7 @@ export default function SparePartsPage() {
                                     "Safety & Durability Assurance",
                                     "Express Installation Service"
                                 ].map((item, i) => (
-                                    <li key={i} className="flex items-center gap-3 text-muted-foreground">
+                                    <li key={i} className="flex items-center gap-3 text-muted-foreground" data-aos="fade-up" data-aos-delay={i * 100}>
                                         <CheckCircle className="text-primary" size={20} />
                                         <span>{item}</span>
                                     </li>
@@ -102,7 +102,7 @@ export default function SparePartsPage() {
                                 </Button>
                             </Link>
                         </div>
-                        <div className="lg:w-1/2 h-[500px] w-full relative">
+                        <div className="lg:w-1/2 h-[500px] w-full relative" data-aos="fade-left" data-aos-duration="800">
                             <div className="absolute inset-0 transform translate-x-4 translate-y-4 border border-primary/30" />
                             <PlaceholderImage label="Spare Parts Close-up" className="relative z-10" />
                         </div>
@@ -115,7 +115,7 @@ export default function SparePartsPage() {
                 <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
                 <div className="container mx-auto px-6">
-                    <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold text-center mb-16">
+                    <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold text-center mb-16" data-aos="fade-up" data-aos-duration="800">
                         Warranty & <span className="text-primary">Benefits</span>
                     </h2>
 
@@ -128,7 +128,11 @@ export default function SparePartsPage() {
                             { title: "Long-Term Protection", icon: RotateCcw, desc: "Extended part warranties." },
                             { title: "Dealer Standards", icon: Settings, desc: "No compromise on quality." },
                         ].map((card, idx) => (
-                            <div key={idx} className="group bg-card p-8 border border-border hover:border-primary transition-all duration-300 hover:-translate-y-2 shadow-sm hover:shadow-lg hover:shadow-primary/5">
+                            <div key={idx} className="group bg-card p-8 border border-border hover:border-primary transition-all duration-300 hover:-translate-y-2 shadow-sm hover:shadow-lg hover:shadow-primary/5"
+                                data-aos="fade-up"
+                                data-aos-delay={idx * 100}
+                                data-aos-duration="800"
+                            >
                                 <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                                     <card.icon size={28} />
                                 </div>
@@ -143,7 +147,7 @@ export default function SparePartsPage() {
             {/* 4️⃣ Spare Parts Options */}
             <section className="py-24 bg-background">
                 <div className="container mx-auto px-6">
-                    <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold text-center mb-16">
+                    <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold text-center mb-16" data-aos="fade-up" data-aos-duration="800">
                         Comprehensive <span className="text-primary">Solutions</span>
                     </h2>
 
@@ -154,7 +158,11 @@ export default function SparePartsPage() {
                             { title: "Battery & Power", imgLabel: "Battery Replacement", items: ["AGM Batteries", "Lithium Ion", "Voltage Regulators"] },
                             { title: "Restoration", imgLabel: "Engine Repair", items: ["Classic Rebuilds", "Chassis Alignment", "Interior Refurbishment"] }
                         ].map((block, idx) => (
-                            <div key={idx} className="bg-card border border-border overflow-hidden group hover:border-primary/50 transition-colors">
+                            <div key={idx} className="bg-card border border-border overflow-hidden group hover:border-primary/50 transition-colors"
+                                data-aos="fade-up"
+                                data-aos-delay={idx * 150}
+                                data-aos-duration="800"
+                            >
                                 <div className="h-64 overflow-hidden relative">
                                     <PlaceholderImage label={block.imgLabel} />
                                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
@@ -180,13 +188,13 @@ export default function SparePartsPage() {
             {/* 5️⃣ Our Process (Timeline) */}
             <section className="py-24 bg-muted/30">
                 <div className="container mx-auto px-6 text-center">
-                    <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold mb-16">
+                    <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold mb-16" data-aos="fade-up" data-aos-duration="800">
                         Service <span className="text-primary">Process</span>
                     </h2>
 
                     <div className="relative">
                         {/* Line */}
-                        <div className="hidden lg:block absolute top-12 left-0 w-full h-[1px] bg-border" />
+                        <div className="hidden lg:block absolute top-12 left-0 w-full h-[1px] bg-border" data-aos="fade-in" data-aos-delay="200" data-aos-duration="1000" />
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                             {[
@@ -195,8 +203,12 @@ export default function SparePartsPage() {
                                 { step: "03", title: "Replacement", desc: "Genuine parts installation" },
                                 { step: "04", title: "Testing", desc: "Quality assurance drive" },
                             ].map((process, i) => (
-                                <div key={i} className="relative z-10 flex flex-col items-center">
-                                    <div className="w-24 h-24 bg-background border-2 border-primary rounded-full flex flex-col items-center justify-center mb-6 shadow-lg shadow-primary/10">
+                                <div key={i} className="relative z-10 flex flex-col items-center"
+                                    data-aos="fade-up"
+                                    data-aos-delay={i * 200}
+                                    data-aos-duration="800"
+                                >
+                                    <div className="w-24 h-24 bg-background border-2 border-primary rounded-full flex flex-col items-center justify-center mb-6 shadow-lg shadow-primary/10 transition-transform hover:scale-110 duration-300">
                                         <span className="text-primary font-bold text-xl">{process.step}</span>
                                     </div>
                                     <h4 className="text-xl font-bold mb-2">{process.title}</h4>
@@ -212,7 +224,7 @@ export default function SparePartsPage() {
             <section className="py-24 bg-background">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
-                        <div className="lg:w-1/2">
+                        <div className="lg:w-1/2" data-aos="fade-left" data-aos-duration="800">
                             <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold mb-8">
                                 Why <span className="text-primary">Red Dune?</span>
                             </h2>
@@ -223,7 +235,7 @@ export default function SparePartsPage() {
                                     { title: "Huge Inventory", desc: "Access to over 10 million individual part numbers." },
                                     { title: "Premium Facility", desc: "State-of-the-art climate-controlled workshop." }
                                 ].map((item, i) => (
-                                    <div key={i} className="flex gap-4">
+                                    <div key={i} className="flex gap-4" data-aos="fade-up" data-aos-delay={i * 100}>
                                         <div className="w-12 h-12 bg-primary/10 flex items-center justify-center shrink-0">
                                             <ShieldCheck className="text-primary" size={24} />
                                         </div>
@@ -235,7 +247,7 @@ export default function SparePartsPage() {
                                 ))}
                             </div>
                         </div>
-                        <div className="lg:w-1/2 h-[500px] w-full">
+                        <div className="lg:w-1/2 h-[500px] w-full" data-aos="fade-right" data-aos-duration="800">
                             <PlaceholderImage label="Workshop Section Area" className="rounded-sm grayscale hover:grayscale-0 transition-all duration-500" />
                         </div>
                     </div>
@@ -245,10 +257,14 @@ export default function SparePartsPage() {
             {/* 7️⃣ Supported Brands */}
             <section className="py-24 bg-muted/30">
                 <div className="container mx-auto px-6 text-center">
-                    <p className="text-primary uppercase tracking-widest font-bold mb-8 text-sm">We Specialize In</p>
+                    <p className="text-primary uppercase tracking-widest font-bold mb-8 text-sm" data-aos="fade-up" data-aos-duration="800">We Specialize In</p>
                     <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                        {["Audi", "BMW", "Mercedes-Benz", "Porsche", "Ferrari", "Bentley", "Range Rover", "Rolls Royce", "Lamborghini", "Jaguar", "McLaren", "Volkswagen"].map((brand) => (
-                            <div key={brand} className="h-24 bg-card border border-border flex items-center justify-center hover:border-primary hover:shadow-sm transition-all group">
+                        {["Audi", "BMW", "Mercedes-Benz", "Porsche", "Ferrari", "Bentley", "Range Rover", "Rolls Royce", "Lamborghini", "Jaguar", "McLaren", "Volkswagen"].map((brand, idx) => (
+                            <div key={brand} className="h-24 bg-card border border-border flex items-center justify-center hover:border-primary hover:shadow-sm transition-all group"
+                                data-aos="fade-up"
+                                data-aos-delay={idx * 50}
+                                data-aos-duration="800"
+                            >
                                 <span className="text-muted-foreground font-bold group-hover:text-primary transition-colors">{brand}</span>
                             </div>
                         ))}
@@ -259,13 +275,13 @@ export default function SparePartsPage() {
             {/* 8️⃣ FAQ */}
             <section className="py-24 bg-background mb-20">
                 <div className="container mx-auto px-6 max-w-4xl">
-                    <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold text-center mb-16">
+                    <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold text-center mb-16" data-aos="fade-up" data-aos-duration="800">
                         Common <span className="text-primary">Questions</span>
                     </h2>
 
                     <div className="space-y-4">
                         {FAQS.map((faq, index) => (
-                            <div key={index} className="border-b border-border">
+                            <div key={index} className="border-b border-border" data-aos="fade-up" data-aos-delay={index * 100} data-aos-duration="800">
                                 <button
                                     onClick={() => toggleFaq(index)}
                                     className="w-full text-left py-6 flex justify-between items-center hover:text-primary transition-colors focus:outline-none"

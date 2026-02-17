@@ -1,79 +1,42 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
 import { SERVICE_DETAILS } from "@/lib/data";
-
-gsap.registerPlugin(ScrollTrigger);
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export function ServiceList() {
-    const sectionsRef = useRef<HTMLDivElement[]>([]);
+    const { t } = useLanguage();
 
-    useEffect(() => {
-        const ctx = gsap.context(() => {
-            sectionsRef.current.forEach((section, index) => {
-                const isEven = index % 2 === 0;
-                const text = section.querySelector(".service-text");
-                const image = section.querySelector(".service-image");
-
-                // Animate Image (Slide in)
-                gsap.fromTo(
-                    image,
-                    { x: isEven ? 100 : -100, opacity: 0 },
-                    {
-                        x: 0,
-                        opacity: 1,
-                        duration: 1.2,
-                        ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: section,
-                            start: "top 70%",
-                        },
-                    }
-                );
-
-                // Animate Text (Fade Up)
-                gsap.fromTo(
-                    text,
-                    { y: 50, opacity: 0 },
-                    {
-                        y: 0,
-                        opacity: 1,
-                        duration: 1,
-                        delay: 0.2,
-                        ease: "power2.out",
-                        scrollTrigger: {
-                            trigger: section,
-                            start: "top 70%",
-                        },
-                    }
-                );
-            });
-        });
-
-        return () => ctx.revert();
-    }, []);
-
-    const addToRefs = (el: HTMLDivElement | null) => {
-        if (el && !sectionsRef.current.includes(el)) {
-            sectionsRef.current.push(el);
-        }
+    const getTranslationKey = (id: string) => {
+        const map: Record<string, string> = {
+            "service": "service",
+            "workshop": "workshop",
+            "body-shop": "bodyShop",
+            "engineering": "engineering",
+            "engine-gearbox": "engineGearbox",
+            "recovery": "recovery"
+        };
+        return map[id] || id;
     };
+
+    const displayServices = SERVICE_DETAILS.map(service => ({
+        ...service,
+        title: t(`services.items.${getTranslationKey(service.id)}.title`),
+        description: t(`services.items.${getTranslationKey(service.id)}.description`),
+    }));
 
     return (
         <div className="flex flex-col">
-            {SERVICE_DETAILS.map((service, index) => {
+            {displayServices.map((service, index) => {
                 const isEven = index % 2 === 0; // Even: Image Right, Text Left. Odd: Image Left, Text Right.
 
                 return (
                     <div
                         key={service.id}
-                        ref={addToRefs}
                         id={service.id}
                         className={cn(
                             "flex flex-col lg:flex-row min-h-[600px] overflow-hidden border-b border-gray-100 last:border-0",
@@ -86,8 +49,10 @@ export function ServiceList() {
                                 "w-full lg:w-1/2 p-12 lg:p-24 flex flex-col justify-center order-2",
                                 isEven ? "lg:order-1" : "lg:order-2"
                             )}
+                            data-aos="fade-up"
+                            data-aos-duration="1000"
                         >
-                            <div className="service-text opacity-0">
+                            <div className="service-text">
                                 <div className="inline-block w-12 h-1 bg-primary mb-6" />
                                 <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6 tracking-tight uppercase text-secondary">
                                     {service.title}
@@ -97,7 +62,7 @@ export function ServiceList() {
                                 </p>
                                 <Link href={service.link || "#contact"}>
                                     <Button className="rounded-full px-8 h-12 text-base shadow-lg shadow-primary/20 hover:scale-105 transition-transform duration-300">
-                                        Read More
+                                        {t("servicesPage.readMore")}
                                     </Button>
                                 </Link>
                             </div>
@@ -109,8 +74,10 @@ export function ServiceList() {
                                 "w-full lg:w-1/2 relative min-h-[400px] lg:min-h-full order-1",
                                 isEven ? "lg:order-2" : "lg:order-1"
                             )}
+                            data-aos={isEven ? "fade-left" : "fade-right"}
+                            data-aos-duration="1200"
                         >
-                            <div className="service-image opacity-0 w-full h-full relative overflow-hidden group">
+                            <div className="service-image w-full h-full relative overflow-hidden group">
                                 <div className="absolute inset-0 bg-neutral-200" />
                                 <Image
                                     src={service.image}

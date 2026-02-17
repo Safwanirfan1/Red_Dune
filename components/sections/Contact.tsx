@@ -1,11 +1,15 @@
 "use client";
 
 import { Button } from "@/components/ui/Button";
-import { Input } from "@/components/ui/Input"; // Will create Input
-import { Textarea } from "@/components/ui/Textarea"; // Will create Textarea
+import { Input } from "@/components/ui/Input";
+import { Textarea } from "@/components/ui/Textarea";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import Link from 'next/link';
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export function Contact() {
+    const { t } = useLanguage();
+
     return (
         <section id="contact" className="py-24 bg-white">
             <div className="container mx-auto px-6">
@@ -13,11 +17,11 @@ export function Contact() {
                     {/* Contact Info & Form */}
                     <div className="space-y-8">
                         <div data-aos="fade-right" data-aos-duration="800">
-                            <h2 className="font-heading text-3xl md:text-5xl font-bold tracking-tight mb-4">
-                                Get in <span className="text-primary">Touch</span>
+                            <h2 className="font-heading text-3xl md:text-5xl font-bold tracking-tight mb-4 uppercase">
+                                {t("contact.prefix")} <span className="text-primary">{t("contact.title")}</span>
                             </h2>
                             <p className="font-sans text-muted-foreground text-lg">
-                                Ready to transform your vehicle? Schedule an appointment or visit us today.
+                                {t("contact.description")}
                             </p>
                         </div>
 
@@ -26,18 +30,20 @@ export function Contact() {
                                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                                     <MapPin size={20} />
                                 </div>
-                                <div>
-                                    <h4 className="font-heading font-semibold mb-1">Visit Us</h4>
-                                    <p className="font-sans text-sm text-muted-foreground">123 Auto Avenue, DIP, Dubai, UAE</p>
-                                </div>
+                                <Link href="https://www.google.com/maps?q=25.10978889465332,55.227561950683594&z=17&hl=en" target="_blank" rel="noopener noreferrer">
+                                    <div>
+                                        <h4 className="font-heading font-semibold mb-1">{t("contact.visitUs")}</h4>
+                                        <p className="font-sans text-sm text-muted-foreground">{t("footer.address")}</p>
+                                    </div>
+                                </Link>
                             </div>
                             <div className="flex items-start gap-4" data-aos="zoom-in" data-aos-delay="400">
                                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                                     <Phone size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-heading font-semibold mb-1">Call Us</h4>
-                                    <p className="font-sans text-sm text-muted-foreground">+971 4 123 4567</p>
+                                    <h4 className="font-heading font-semibold mb-1">{t("contact.callUs")}</h4>
+                                    <p className="font-sans text-sm text-muted-foreground" dir="ltr">+971 56 776 5665</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4" data-aos="zoom-in" data-aos-delay="500">
@@ -45,7 +51,7 @@ export function Contact() {
                                     <Mail size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-heading font-semibold mb-1">Email</h4>
+                                    <h4 className="font-heading font-semibold mb-1">{t("contact.email")}</h4>
                                     <p className="font-sans text-sm text-muted-foreground">info@reddune.ae</p>
                                 </div>
                             </div>
@@ -54,24 +60,24 @@ export function Contact() {
                                     <Clock size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-heading font-semibold mb-1">Working Hours</h4>
-                                    <p className="font-sans text-sm text-muted-foreground">Sat - Thu: 8:00 AM - 7:00 PM</p>
+                                    <h4 className="font-heading font-semibold mb-1">{t("contact.workingHours")}</h4>
+                                    <p className="font-sans text-sm text-muted-foreground">{t("nav.workingHours")}</p>
                                 </div>
                             </div>
                         </div>
 
                         <form className="space-y-4 pt-4" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
                             <div className="grid grid-cols-2 gap-4">
-                                <Input placeholder="First Name" />
-                                <Input placeholder="Phone Number" />
+                                <Input placeholder={t("contact.form.firstName")} />
+                                <Input placeholder={t("contact.form.phone")} />
                             </div>
-                            <Input placeholder="Email Address" type="email" />
+                            <Input placeholder={t("contact.form.email")} type="email" />
                             <div className="grid grid-cols-2 gap-4">
-                                <Input placeholder="Vehicle Make" />
-                                <Input placeholder="Vehicle Model" />
+                                <Input placeholder={t("contact.form.make")} />
+                                <Input placeholder={t("contact.form.model")} />
                             </div>
-                            <Textarea placeholder="How can we help you?" className="min-h-[120px]" />
-                            <Button type="submit" size="lg" className="w-full">Send Message</Button>
+                            <Textarea placeholder={t("contact.form.message")} className="min-h-[120px]" />
+                            <Button type="submit" size="lg" className="w-full">{t("contact.form.submit")}</Button>
                         </form>
                     </div>
 

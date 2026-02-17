@@ -1,6 +1,6 @@
 export function Stats() {
     const stats = [
-        { label: "Experience", value: "15+", suffix: "Years" },
+        { label: "Experience", value: "5.0+", suffix: "Years" },
         { label: "Satisfied Clients", value: "10k", suffix: "+" },
         { label: "Expert Crew", value: "50", suffix: "+" },
         { label: "Quality", value: "100", suffix: "%" },

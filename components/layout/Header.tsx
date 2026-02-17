@@ -4,15 +4,18 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { Menu, X, Phone, MessageCircle, ChevronDown, ChevronRight } from "lucide-react";
+import { Menu, X, Phone, MessageCircle, ChevronDown, ChevronRight, Globe } from "lucide-react";
 import { SITE_CONFIG, NAV_DROPDOWNS } from "@/lib/data";
 import { ModeToggle } from "@/components/ui/ModeToggle";
+import { useLanguage } from "@/components/providers/LanguageProvider";
+import { Button } from "@/components/ui/Button";
 
 export function Header() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
     const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+    const { t, language, setLanguage, direction } = useLanguage();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -29,6 +32,10 @@ export function Header() {
         setMobileExpanded(mobileExpanded === label ? null : label);
     };
 
+    const toggleLanguage = () => {
+        setLanguage(language === "en" ? "ar" : "en");
+    };
+
     type NavItem = { label: string; href: string };
     type Column = NavItem[];
     type DropdownData = NavItem[] | Column[];
@@ -39,24 +46,36 @@ export function Header() {
         return (NAV_DROPDOWNS as Record<string, DropdownData>)[key];
     };
 
+    // Helper to translate nav labels
+    const getTranslatedLabel = (label: string) => {
+        const key = label.toLowerCase().replace(/ /g, "");
+        // Map specific cases if needed, otherwise rely on key matching
+        if (key === "home") return t("nav.home");
+        if (key === "services") return t("nav.services");
+        if (key === "brands") return t("nav.brands");
+        if (key === "products") return t("nav.products");
+        if (key === "contact") return t("nav.contact");
+        return label;
+    };
+
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 flex flex-col">
+        <header className="fixed top-0 left-0 right-0 z-50 flex flex-col" dir={direction} data-aos="fade-down" data-aos-duration="800">
             {/* Top Bar - Dark Premium Look */}
             <div className="bg-secondary text-secondary-foreground py-2 text-xs md:text-sm transition-all duration-300 overflow-hidden"
                 style={{ height: isScrolled ? 0 : 'auto', opacity: isScrolled ? 0 : 1 }}>
                 <div className="container mx-auto px-6 flex justify-between items-center">
                     <div className="flex gap-6">
-                        <a href="tel:+9718003973787" className="flex items-center gap-2 hover:text-primary transition-colors">
+                        <a href="tel:+971567765665" className="flex items-center gap-2 hover:text-primary transition-colors">
                             <Phone size={14} className="text-primary" />
-                            <span>800 397 3787</span>
+                            <span dir="ltr">+971 56 776 5665</span>
                         </a>
-                        <a href="https://wa.me/9718003973787" className="flex items-center gap-2 hover:text-green-500 transition-colors">
+                        <a href="https://wa.me/971567765665" className="flex items-center gap-2 hover:text-green-500 transition-colors">
                             <MessageCircle size={14} className="text-green-500" />
-                            <span>WhatsApp Us</span>
+                            <span>{t("nav.whatsapp")}</span>
                         </a>
                     </div>
                     <div className="hidden md:flex gap-4 opacity-80">
-                        <span>Sat - Thu: 8:00 AM - 7:00 PM</span>
+                        <span>{t("nav.workingHours")}</span>
                     </div>
                 </div>
             </div>
@@ -74,15 +93,16 @@ export function Header() {
                             alt="Red Dune - German Expert Garage"
                             width={200}
                             height={50}
-                            className="h-20 w-auto object-contain transition-transform group-hover:scale-105"
+                            className="h-8 sm:h-10 md:h-14 w-auto object-contain transition-transform group-hover:scale-105"
                         />
                     </Link>
 
                     {/* Desktop Nav */}
-                    <nav className="hidden lg:flex items-center gap-8">
+                    <nav className="hidden md:flex items-center gap-8">
                         {SITE_CONFIG.navItems.map((item) => {
                             const hasDropdown = ["Services", "Brands", "Products"].includes(item.label);
                             const dropdownData = hasDropdown ? getDropdownData(item.label) : null;
+                            const label = getTranslatedLabel(item.label);
 
                             return (
                                 <div
@@ -98,7 +118,7 @@ export function Header() {
                                             activeDropdown === item.label && "text-primary"
                                         )}
                                     >
-                                        {item.label}
+                                        {label}
                                         {hasDropdown && <ChevronDown size={14} className={cn("transition-transform duration-300", activeDropdown === item.label ? "rotate-180" : "")} />}
                                     </Link>
 
@@ -106,14 +126,15 @@ export function Header() {
                                     {hasDropdown && dropdownData && (
                                         <div
                                             className={cn(
-                                                "absolute top-full left-1/2 -translate-x-1/2 pt-4 w-auto min-w-[200px] transition-all duration-300 ease-in-out z-50",
+                                                "absolute top-full pt-4 w-auto min-w-[200px] transition-all duration-300 ease-in-out z-50",
+                                                direction === "rtl" ? "right-1/2 translate-x-1/2" : "left-1/2 -translate-x-1/2",
                                                 activeDropdown === item.label ? "opacity-100 translate-y-0 visible" : "opacity-0 translate-y-2 invisible pointer-events-none"
                                             )}
                                         >
                                             <div className="bg-secondary text-white rounded-xl shadow-2xl overflow-hidden border border-white/10 p-6">
                                                 {/* Brands Grid (4 Columns) */}
                                                 {item.label === "Brands" && (
-                                                    <div className="grid grid-cols-4 gap-x-12 gap-y-4 w-[800px]">
+                                                    <div className="grid grid-cols-4 gap-x-12 gap-y-4 w-[800px]" dir="ltr">
                                                         {(dropdownData as Column[]).map((col, colIndex) => (
                                                             <div key={colIndex} className="flex flex-col gap-3">
                                                                 {col.map((brand) => (
@@ -156,16 +177,26 @@ export function Header() {
 
                     {/* CTA & Mobile Toggle */}
                     <div className="flex items-center gap-4">
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={toggleLanguage}
+                            className="rounded-full w-10 h-10 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                            aria-label="Toggle Language"
+                        >
+                            <span className="font-bold text-sm">{language === "en" ? "AR" : "EN"}</span>
+                        </Button>
+
                         <ModeToggle />
                         <Link
                             href="#contact"
                             className="hidden sm:inline-flex bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-wider hover:bg-primary/90 transition-all hover:shadow-lg hover:-translate-y-0.5"
                         >
-                            Book Service
+                            {t("nav.bookService")}
                         </Link>
 
                         <button
-                            className="lg:hidden p-2 text-secondary"
+                            className="md:hidden p-2 text-secondary"
                             onClick={toggleMenu}
                             aria-label="Toggle menu"
                         >
@@ -178,15 +209,16 @@ export function Header() {
             {/* Mobile Menu */}
             <div
                 className={cn(
-                    "lg:hidden fixed inset-x-0 top-[100px] bottom-0 bg-white z-40 transition-all duration-300 ease-in-out transform",
-                    isMobileMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
+                    "md:hidden fixed inset-0 bg-white z-[9999] transition-transform duration-300 ease-in-out transform",
+                    isMobileMenuOpen ? "opacity-100 translate-x-0 pointer-events-auto" : "opacity-0 translate-x-full pointer-events-none"
                 )}
             >
-                <nav className="flex flex-col p-8 gap-4 h-full overflow-y-auto">
+                <nav className="flex flex-col p-6 gap-4 h-full overflow-y-auto pt-20 md:pt-20">
                     {SITE_CONFIG.navItems.map((item) => {
                         const hasDropdown = ["Services", "Brands", "Products"].includes(item.label);
                         const dropdownData = hasDropdown ? getDropdownData(item.label) : null;
                         const isExpanded = mobileExpanded === item.label;
+                        const label = getTranslatedLabel(item.label);
 
                         return (
                             <div key={item.href} className="border-b border-gray-100 pb-2">
@@ -196,7 +228,7 @@ export function Header() {
                                         className="text-xl font-bold text-secondary hover:text-primary py-2 block flex-1"
                                         onClick={() => !hasDropdown && setIsMobileMenuOpen(false)}
                                     >
-                                        {item.label}
+                                        {label}
                                     </Link>
                                     {hasDropdown && (
                                         <button
@@ -254,7 +286,7 @@ export function Header() {
                         className="bg-primary text-white py-4 rounded-lg text-center font-bold uppercase mt-4 shadow-lg shadow-primary/20"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >
-                        Book Appointment
+                        {t("nav.bookService")}
                     </Link>
                 </nav>
             </div>

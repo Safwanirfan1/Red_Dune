@@ -1,22 +1,37 @@
+"use client";
+
 import Link from "next/link";
 import { Car, Facebook, Instagram, Twitter, MapPin, Phone, Mail } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/data";
+import Image from "next/image";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export function Footer() {
+    const { t } = useLanguage();
+
+    // Helper to translate nav labels
+
+    const getTranslatedLabel = (label: string) => {
+        const key = label.toLowerCase().replace(/ /g, "");
+        if (key === "home") return t("nav.home");
+        if (key === "services") return t("nav.services");
+        if (key === "brands") return t("nav.brands");
+        if (key === "products") return t("nav.products");
+        if (key === "contact") return t("nav.contact");
+        return label;
+    };
+
     return (
         <footer className="bg-secondary text-secondary-foreground pt-16 pb-8">
             <div className="container mx-auto px-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                     {/* Brand */}
-                    <div className="space-y-4">
-                        <div className="flex items-center gap-2">
-                            <div className="w-8 h-8 bg-primary rounded-md flex items-center justify-center text-white">
-                                <Car size={18} />
-                            </div>
-                            <span className="text-xl font-bold tracking-tight">RED DUNE</span>
+                    <div className="space-y-4" data-aos="fade-up">
+                        <div className="flex items-center gap-2 -mt-8">
+                            <Image src="/images/logo.png" alt="Logo" width={250} height={250} className="w-36 md:w-56 h-auto" />
                         </div>
                         <p className="font-sans text-gray-400 text-sm leading-relaxed">
-                            Premium automotive care for luxury vehicles. Experience the art of perfection with our certified experts.
+                            {t("footer.description")}
                         </p>
                         <div className="flex gap-4 pt-2">
                             <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors">
@@ -32,13 +47,13 @@ export function Footer() {
                     </div>
 
                     {/* Quick Links */}
-                    <div>
-                        <h3 className="font-heading text-lg font-semibold mb-6">Quick Links</h3>
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <h3 className="font-heading text-lg font-semibold mb-6">{t("footer.quickLinks")}</h3>
                         <ul className="space-y-3">
                             {SITE_CONFIG.navItems.map((item) => (
                                 <li key={item.href}>
                                     <Link href={item.href} className="text-gray-400 hover:text-primary transition-colors text-sm">
-                                        {item.label}
+                                        {getTranslatedLabel(item.label)}
                                     </Link>
                                 </li>
                             ))}
@@ -46,28 +61,28 @@ export function Footer() {
                     </div>
 
                     {/* Services */}
-                    <div>
-                        <h3 className="font-heading text-lg font-semibold mb-6">Our Services</h3>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <h3 className="font-heading text-lg font-semibold mb-6">{t("footer.ourServices")}</h3>
                         <ul className="space-y-3">
-                            <li><Link href="#" className="text-gray-400 hover:text-primary transition-colors text-sm">Performance Tuning</Link></li>
-                            <li><Link href="#" className="text-gray-400 hover:text-primary transition-colors text-sm">Body Shop & Paint</Link></li>
-                            <li><Link href="#" className="text-gray-400 hover:text-primary transition-colors text-sm">Regular Maintenance</Link></li>
-                            <li><Link href="#" className="text-gray-400 hover:text-primary transition-colors text-sm">Ceramic Coating</Link></li>
-                            <li><Link href="#" className="text-gray-400 hover:text-primary transition-colors text-sm">Diagnostics</Link></li>
+                            <li><Link href="#" className="text-gray-400 hover:text-primary transition-colors text-sm">{t("services.items.engineering.title")}</Link></li>
+                            <li><Link href="#" className="text-gray-400 hover:text-primary transition-colors text-sm">{t("services.items.bodyShop.title")}</Link></li>
+                            <li><Link href="#" className="text-gray-400 hover:text-primary transition-colors text-sm">{t("services.items.engineGearbox.title")}</Link></li>
+                            <li><Link href="#" className="text-gray-400 hover:text-primary transition-colors text-sm">{t("services.items.workshop.title")}</Link></li>
+                            <li><Link href="#" className="text-gray-400 hover:text-primary transition-colors text-sm">{t("services.items.recovery.title")}</Link></li>
                         </ul>
                     </div>
 
                     {/* Contact */}
-                    <div>
-                        <h3 className="font-heading text-lg font-semibold mb-6">Contact Us</h3>
+                    <div data-aos="fade-up" data-aos-delay="300">
+                        <h3 className="font-heading text-lg font-semibold mb-6">{t("footer.contactUs")}</h3>
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3 text-gray-400 text-sm">
                                 <MapPin size={18} className="text-primary shrink-0 mt-0.5" />
-                                <span className="font-sans">123 Auto Avenue, Dubai Investments Park, Dubai, UAE</span>
+                                <Link href="https://www.google.com/maps?q=25.10978889465332,55.227561950683594&z=17&hl=en" target="_blank" rel="noopener noreferrer"><span className="font-sans">{t("footer.address")}</span></Link>
                             </li>
                             <li className="flex items-center gap-3 text-gray-400 text-sm">
                                 <Phone size={18} className="text-primary shrink-0" />
-                                <span className="font-sans">+971 4 123 4567</span>
+                                <span className="font-sans" dir="ltr">+971 56 776 5665</span>
                             </li>
                             <li className="flex items-center gap-3 text-gray-400 text-sm">
                                 <Mail size={18} className="text-primary shrink-0" />
@@ -78,10 +93,13 @@ export function Footer() {
                 </div>
 
                 <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="font-sans text-gray-500 text-sm">© {new Date().getFullYear()} Red Dune Auto Services. All rights reserved.</p>
+                    <p className="font-sans text-gray-500 text-sm">© {new Date().getFullYear()} {t("footer.rights")}</p>
+                    <div className="font-sans text-gray-500 text-sm">
+                        {t("footer.poweredBy")}
+                    </div>
                     <div className="flex gap-6 text-sm text-gray-500">
-                        <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-                        <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+                        <Link href="#" className="hover:text-white transition-colors">{t("footer.privacy")}</Link>
+                        <Link href="#" className="hover:text-white transition-colors">{t("footer.terms")}</Link>
                     </div>
                 </div>
             </div>

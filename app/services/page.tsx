@@ -1,10 +1,15 @@
+"use client";
+
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ServiceList } from "@/components/sections/ServiceList";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
+import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export default function ServicesPage() {
+    const { t } = useLanguage();
+
     return (
         <main className="min-h-screen bg-background">
             <Header />
@@ -18,10 +23,10 @@ export default function ServicesPage() {
 
                 <div className="relative z-10 text-center px-6 space-y-6">
                     <h1 className="text-5xl md:text-7xl font-bold text-white tracking-widest uppercase" data-aos="fade-down" data-aos-duration="800">
-                        Our Services
+                        {t("servicesPage.title")}
                     </h1>
                     <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto font-light" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-                        Expert care for your premium vehicle. Experience the Red Dune difference.
+                        {t("servicesPage.description")}
                     </p>
                     <div className="pt-4" data-aos="zoom-in" data-aos-delay="400">
                         {/* <Link href="#contact">

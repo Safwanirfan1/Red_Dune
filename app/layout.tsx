@@ -3,6 +3,8 @@ import { Geist_Mono, Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AOSInit } from "@/components/AOSInit";
+import { FloatingButtons } from "@/components/ui/FloatingButtons";
+import { LanguageProvider } from "@/components/providers/LanguageProvider";
 
 
 
@@ -42,8 +44,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <AOSInit />
-          {children}
+          <LanguageProvider>
+            <AOSInit />
+            <FloatingButtons />
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>
