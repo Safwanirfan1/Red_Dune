@@ -28,7 +28,7 @@ export function Footer() {
                     {/* Brand */}
                     <div className="space-y-4" data-aos="fade-up">
                         <div className="flex items-center gap-2 -mt-8">
-                            <Image src="/images/logo.png" alt="Logo" width={250} height={250} className="w-36 md:w-56 h-auto" />
+                            <Image src="/images/logo.png" alt="Logo" width={250} height={250} />
                         </div>
                         <p className="font-sans text-gray-400 text-sm leading-relaxed">
                             {t("footer.description")}

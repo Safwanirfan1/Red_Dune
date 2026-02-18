@@ -19,8 +19,8 @@ export const SITE_CONFIG = {
 
 export const NAV_DROPDOWNS = {
     services: [
-        { label: "Recovery Services", href: "/#contact" },
-        { label: "Engine & Gearbox", href: "/#contact" },
+        { label: "Recovery Services", href: "/services/recovery" },
+        { label: "Engine & Gearbox", href: "/services/enginegear" },
         { label: "Engineering & Programming", href: "/services/engineering" },
         { label: "Body Shop", href: "/services/bodyshop" },
         { label: "Workshop", href: "/services/workshop" },
@@ -163,13 +163,13 @@ export const SERVICE_DETAILS = [
         title: "SERVICE",
         description: "Our comprehensive service packages ensure your vehicle performs at its best. From routine maintenance to complex repairs, our certified technicians use state-of-the-art diagnostic tools to identify and resolve issues with precision. We use only genuine parts to maintain the integrity and value of your luxury vehicle.",
         image: "/images/services1.jpg",
-        link: "#contact",
+        link: "/services/enginegear",
     },
     {
         id: "workshop",
         title: "WORKSHOP",
         description: "Our world-class workshop is equipped with the latest technology to handle any automotive challenge. We maintain a pristine, organized environment that reflects the quality of work we deliver. Whether it's a minor adjustment or a major overhaul, your car is in the safest hands.",
-        image: "/images/Services.jpg",
+        image: "/images/services.jpg",
         link: "/services/workshop",
     },
     {
@@ -183,7 +183,7 @@ export const SERVICE_DETAILS = [
         id: "engineering",
         title: "ENGINEERING AND PROGRAMMING",
         description: "Unlock the full potential of your vehicle with our advanced engineering and programming services. We offer ECU tuning, performance upgrades, and software updates tailored to your specific driving preferences. Enhance power, efficiency, and responsiveness with our custom solutions.",
-        image: "/images/download2.jpg",
+        image: "/images/engineering.jpg",
         link: "/services/engineering",
     },
     {
@@ -191,14 +191,14 @@ export const SERVICE_DETAILS = [
         title: "ENGINE AND GEARBOX",
         description: "The heart of your vehicle deserves the utmost care. Our engine and gearbox specialists are experts in diagnosing and repairing complex mechanical issues. From engine rebuilds to transmission servicing, we ensure smooth power delivery and reliability for the long haul.",
         image: "/images/2.jpg",
-        link: "#contact",
+        link: "/services/enginegear",
     },
     {
         id: "recovery",
         title: "RECOVERY SERVICE",
         description: "Stranded? Our premium recovery service is available 24/7 to assist you. We provide safe and professional towing for luxury vehicles, ensuring they are transported without a scratch to our workshop. Peace of mind is just a phone call away.",
         image: "/images/recovery.jpg",
-        link: "#contact",
+        link: "/services/recovery",
     },
 ];
 
@@ -250,16 +250,16 @@ export const BLOG_POSTS = [
 ];
 
 export const WORKSHOP_SERVICES = [
-    { id: "ws-workshop", title: "Engine Managemnt System", icon: Settings, description: "Advanced diagnostic and repair workshop.", image: "/images/services/workshop.jpg" },
-    { id: "ws-bodyshop", title: "Car Comfort", icon: ShieldCheck, description: "Expert body repair and painting.", image: "/images/services/bodyshop.jpg" },
-    { id: "ws-programming", title: "Brake System", icon: Cpu, description: "ECU coding and software updates.", image: "/images/services/programming.jpg" },
-    { id: "ws-engine", title: "Oil Change Service", icon: Cog, description: "Complete engine and transmission overhaul.", image: "/images/services/engine.jpg" },
-    { id: "ws-recovery", title: "Wheel Alignment", icon: Car, description: "24/7 vehicle recovery and towing.", image: "/images/services/recovery.jpg" },
+    { id: "ws-workshop", title: "Engine Managemnt System", icon: Settings, description: "Advanced diagnostic and repair workshop.", image: "/images/engineering.jpg", },
+    { id: "ws-bodyshop", title: "Car Comfort", icon: ShieldCheck, description: "Expert body repair and painting.", image: "/images/2.jpg" },
+    { id: "ws-programming", title: "Brake System", icon: Cpu, description: "ECU coding and software updates.", image: "/images/s2.jpg" },
+    { id: "ws-engine", title: "Oil Change Service", icon: Cog, description: "Complete engine and transmission overhaul.", image: "/images/oil.jpg" },
+    { id: "ws-recovery", title: "Wheel Alignment", icon: Car, description: "24/7 vehicle recovery and towing.", image: "/images/wheel.jpg" },
     // { id: "ws-dashboard", title: "Dashboard Repair", icon: Gauge, description: "Instrument cluster and dashboard fixing.", image: "/images/services/dashboard.jpg" },
-    { id: "ws-headlight", title: "Stop & Go Service", icon: Zap, description: "Crystal clear headlight restoration.", image: "/images/services/headlight.jpg" },
-    { id: "ws-windshield", title: "Radiator Service", icon: AppWindow, description: "Professional glass replacement.", image: "/images/services/windshield.jpg" },
-    { id: "ws-dent", title: "Transmission rRpair", icon: ShieldCheck, description: "Remove dents without repainting.", image: "/images/services/dent.jpg" },
-    { id: "ws-roof", title: "Fuel Injection Service", icon: MoveVertical, description: "Fixing sagging or damaged roof liners.", image: "/images/services/roof.jpg" },
+    { id: "ws-headlight", title: "Stop & Go Service", icon: Zap, description: "Crystal clear headlight restoration.", image: "/images/headlight.jpg" },
+    { id: "ws-windshield", title: "Radiator Service", icon: AppWindow, description: "Professional glass replacement.", image: "/images/radiator.jpg" },
+    { id: "ws-dent", title: "Transmission rRpair", icon: ShieldCheck, description: "Remove dents without repainting.", image: "/images/transmission.jpg" },
+    { id: "ws-roof", title: "Fuel Injection Service", icon: MoveVertical, description: "Fixing sagging or damaged roof liners.", image: "/images/fuel.jpg" },
     // { id: "ws-ac", title: "AC Repair", icon: Wind, description: "Complete climate control restoration.", image: "/images/services/ac.jpg" },
     // { id: "ws-brake", title: "Brake Service", icon: Disc, description: "Pad and rotor replacement.", image: "/images/services/brake.jpg" },
     // { id: "ws-suspension", title: "Suspension Repair", icon: Activity, description: "Shocks, struts, and arm replacement.", image: "/images/services/suspension.jpg" },
@@ -271,26 +271,25 @@ export const WORKSHOP_SERVICES = [
 ];
 
 export const BODYSHOP_SERVICES = [
-    { id: "bs-dashboard", title: "Dashboard Leather or Replacement", icon: Armchair, description: "Premium leather wrapping and dashboard restoration.", image: "/images/services/dashboard-leather.jpg" },
-    { id: "bs-restoration", title: "Classic Car Restoration", icon: Car, description: "Bringing vintage beauties back to life.", image: "/images/services/classic-restoration.jpg" },
-    { id: "bs-headlight", title: "Headlight Restoration", icon: Zap, description: "Restoring clarity and brightness to headlights.", image: "/images/services/headlight-restoration.jpg" },
-    { id: "bs-windscreen", title: "Windscreen Restoration", icon: AppWindow, description: "Repairing chips and cracks for clear vision.", image: "/images/services/windscreen.jpg" },
+    { id: "bs-dashboard", title: "Dashboard Leather or Replacement", icon: Armchair, description: "Premium leather wrapping and dashboard restoration.", image: "/images/dashboard cover.jpg" },
+    { id: "bs-restoration", title: "Classic Car Restoration", icon: Car, description: "Bringing vintage beauties back to life.", image: "/images/classic.jfif" },
+    { id: "bs-headlight", title: "Headlight Restoration", icon: Zap, description: "Restoring clarity and brightness to headlights.", image: "/images/headlight.jpg" },
+    { id: "bs-windscreen", title: "Windscreen Restoration", icon: AppWindow, description: "Repairing chips and cracks for clear vision.", image: "/images/windscreen.jpg" },
     // { id: "bs-pdr", title: "Paintless Dent Repair", icon: ShieldCheck, description: "Removing dents without affecting original paint.", image: "/images/services/pdr.jpg" },
-    { id: "bs-roof", title: "Roof Lining Repair", icon: MoveVertical, description: "Fixing sagging headliners and fabrics.", image: "/images/services/roof-lining.jpg" },
-    { id: "bs-alloy", title: "Alloy Wheel Repair", icon: CircleDot, description: "Fixing curb rash, bends, and cosmetic damage.", image: "/images/services/alloy.jpg" },
-    { id: "bs-upholstery", title: "Upholstery & Refurbishment", icon: Armchair, description: "Interior seat repair and material refurbishment.", image: "/images/services/upholstery.jpg" },
-    { id: "bs-denting", title: "Denting Painting", icon: Disc, description: "Professional dent removal and spray painting.", image: "/images/services/denting.jpg" },
+    { id: "bs-roof", title: "Roof Lining Repair", icon: MoveVertical, description: "Fixing sagging headliners and fabrics.", image: "/images/roof lining.jpg" },
+    { id: "bs-alloy", title: "Alloy Wheel Repair", icon: CircleDot, description: "Fixing curb rash, bends, and cosmetic damage.", image: "/images/alloy.jpg" },
+    { id: "bs-upholstery", title: "Upholstery & Refurbishment", icon: Armchair, description: "Interior seat repair and material refurbishment.", image: "/images/Upholstery & Refurbishment.jpg" },
+    { id: "bs-denting", title: "Denting Painting", icon: Disc, description: "Professional dent removal and spray painting.", image: "/images/car painting.jpg" },
     // { id: "bs-smart", title: "Smart Repair", icon: Settings2, description: "Quick fixes for minor scratches and scuffs.", image: "/images/services/smart-repair.jpg" },
-    { id: "bs-chassis", title: "Chassis Repair", icon: Settings, description: "Frame straightening and structural alignment.", image: "/images/services/chassis.jpg" },
-    { id: "bs-rims", title: "Rims and Caliper", icon: CircleDot, description: "Custom painting and repair for rims and calipers.", image: "/images/services/rims.jpg" },
-    { id: "bs-bodykit", title: "Car Body Kit", icon: Car, description: "Installation and styling of custom body kits.", image: "/images/services/bodykit.jpg" },
+    { id: "bs-chassis", title: "Chassis Repair", icon: Settings, description: "Frame straightening and structural alignment.", image: "/images/chasses.jpg" },
+    { id: "bs-rims", title: "Rims and Caliper", icon: CircleDot, description: "Custom painting and repair for rims and calipers.", image: "/images/caliper.jpg" },
+    { id: "bs-bodykit", title: "Car Body Kit", icon: Car, description: "Installation and styling of custom body kits.", image: "/images/car body kit.jpg" },
     // { id: "bs-polish", title: "Polish and Detailing", icon: ShieldCheck, description: "Deep cleaning, polishing, and paint protection.", image: "/images/services/detailing.jpg" },
 ];
 
 export const ENGINEERING_SERVICES = [
-    { id: "eng-retrofit", title: "Retrofit", icon: Settings, description: "Upgrading older vehicles with modern features.", image: "/images/services/retrofit.jpg" },
-    { id: "eng-radar", title: "Radar Calibration", icon: CircleDot, description: "Precision calibration for safety systems.", image: "/images/services/radar.jpg" },
-    { id: "eng-nav", title: "Navigation Update", icon: AppWindow, description: "Latest maps and software for your GPS.", image: "/images/services/nav-update.jpg" },
-    { id: "eng-ecu", title: "Engine Control Unit (ECU)", icon: Cpu, description: "Advanced diagnostics and repair for ECUs.", image: "/images/services/ecu-repair.jpg" },
-    { id: "eng-programming", title: "Programming", icon: Cpu, description: "Software programming and module coding.", image: "/images/services/programming.jpg" },
+    { id: "eng-retrofit", title: "Retrofit", icon: Settings, description: "Upgrading older vehicles with modern features.", image: "/images/retrofit.jfif" },
+    { id: "eng-radar", title: "Radar Calibration", icon: CircleDot, description: "Precision calibration for safety systems.", image: "/images/radar.jfif" },
+    { id: "eng-nav", title: "Navigation Update", icon: AppWindow, description: "Latest maps and software for your GPS.", image: "/images/navigation.jfif" },
+    { id: "eng-programming", title: "Programming", icon: Cpu, description: "Software programming and module coding.", image: "/images/programming.jfif" },
 ];

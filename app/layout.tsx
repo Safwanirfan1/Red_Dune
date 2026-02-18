@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
+
 import { AOSInit } from "@/components/AOSInit";
 import { FloatingButtons } from "@/components/ui/FloatingButtons";
 import { LanguageProvider } from "@/components/providers/LanguageProvider";
@@ -36,20 +36,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${playfair.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${inter.variable} ${playfair.variable} ${geistMono.variable} font-sans antialiased overflow-x-hidden`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <LanguageProvider>
-            <AOSInit />
-            <FloatingButtons />
-            {children}
-          </LanguageProvider>
-        </ThemeProvider>
+        <LanguageProvider>
+          <AOSInit />
+          <FloatingButtons />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );
