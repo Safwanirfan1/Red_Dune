@@ -18,6 +18,7 @@ import {
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { Contact } from "@/components/sections/Contact";
 
 const WARRANTY_KEYS = [
   "certified",
@@ -476,6 +477,7 @@ export default function SparePartsPage() {
           </div>
         </div>
       </section>
+      <Contact />
 
       <Footer />
     </main>

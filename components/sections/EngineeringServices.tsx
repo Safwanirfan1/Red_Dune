@@ -198,7 +198,7 @@ export function EngineeringServices() {
                         <h3 className="font-heading text-2xl font-bold uppercase">
                           {service.title}
                         </h3>
-                        <Link href="#contact">
+                        <Link href={service.href || "#contact"}>
                           <Button className="rounded-full bg-primary hover:bg-primary/90 text-white font-bold px-8 shadow-[0_0_20px_rgba(209,50,50,0.4)] hover:scale-110 transition-all duration-300">
                             Read More
                           </Button>

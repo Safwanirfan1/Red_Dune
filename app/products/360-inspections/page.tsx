@@ -18,6 +18,7 @@ import {
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { Contact } from "@/components/sections/Contact";
 
 export default function InspectionsPage() {
   const { t, direction } = useLanguage();
@@ -219,114 +220,6 @@ export default function InspectionsPage() {
         </div>
       </section>
 
-      {/* 7️⃣ Appointment Booking Section */}
-      <section id="booking" className="py-24 bg-neutral-900/50 px-6 relative">
-        <div className="absolute inset-0 overflow-hidden">
-          <PlaceholderImage
-            label="Booking Form Background"
-            className="opacity-5 scale-110 blur-sm"
-          />
-        </div>
-        <div className="container mx-auto relative z-10 max-w-4xl">
-          <div className="bg-neutral-950 border border-white/10 p-8 md:p-12 shadow-2xl">
-            <h2 className="text-3xl md:text-4xl font-[family-name:var(--font-playfair)] font-bold text-center mb-8 text-white">
-              {t("inspections.booking.title1")}{" "}
-              <span className="text-primary">
-                {t("inspections.booking.title2")}
-              </span>
-            </h2>
-
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-400 uppercase tracking-wide">
-                    {t("inspections.booking.yourName")}
-                  </label>
-                  <Input
-                    placeholder={t("inspections.booking.namePlaceholder")}
-                    className="bg-background border-white/10 text-white h-12 focus:border-primary/50 rounded-none"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-400 uppercase tracking-wide">
-                    {t("inspections.booking.phone")}
-                  </label>
-                  <Input
-                    placeholder={t("inspections.booking.phonePlaceholder")}
-                    className="bg-background border-white/10 text-white h-12 focus:border-primary/50 rounded-none"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-400 uppercase tracking-wide">
-                    {t("inspections.booking.vehicleType")}
-                  </label>
-                  <select className="w-full bg-background border border-white/10 text-white h-12 px-3 focus:outline-none focus:border-primary/50 text-sm">
-                    <option>{t("inspections.booking.sedan")}</option>
-                    <option>{t("inspections.booking.suv")}</option>
-                    <option>{t("inspections.booking.coupe")}</option>
-                    <option>{t("inspections.booking.convertible")}</option>
-                    <option>{t("inspections.booking.hatchback")}</option>
-                  </select>
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-400 uppercase tracking-wide">
-                    {t("inspections.booking.carBrand")}
-                  </label>
-                  <Input
-                    placeholder={t("inspections.booking.brandPlaceholder")}
-                    className="bg-background border-white/10 text-white h-12 focus:border-primary/50 rounded-none"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-400 uppercase tracking-wide">
-                    {t("inspections.booking.carModel")}
-                  </label>
-                  <Input
-                    placeholder={t("inspections.booking.modelPlaceholder")}
-                    className="bg-background border-white/10 text-white h-12 focus:border-primary/50 rounded-none"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-gray-400 uppercase tracking-wide">
-                    {t("inspections.booking.serviceType")}
-                  </label>
-                  <Input
-                    value={t("inspections.booking.serviceValue")}
-                    readOnly
-                    className="bg-white/5 border-white/10 text-gray-400 h-12 focus:border-primary/50 rounded-none cursor-not-allowed"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-                <div className="border border-dashed border-white/20 p-6 flex flex-col items-center justify-center text-center hover:border-primary/50 hover:bg-white/5 transition-colors cursor-pointer group">
-                  <UploadCloud className="mb-3 text-gray-500 group-hover:text-primary transition-colors" />
-                  <span className="text-sm text-gray-400 group-hover:text-white">
-                    {t("inspections.booking.uploadFront")}
-                  </span>
-                </div>
-                <div className="border border-dashed border-white/20 p-6 flex flex-col items-center justify-center text-center hover:border-primary/50 hover:bg-white/5 transition-colors cursor-pointer group">
-                  <UploadCloud className="mb-3 text-gray-500 group-hover:text-primary transition-colors" />
-                  <span className="text-sm text-gray-400 group-hover:text-white">
-                    {t("inspections.booking.uploadBack")}
-                  </span>
-                </div>
-              </div>
-
-              <Button className="w-full bg-primary text-white hover:bg-red-700 h-14 text-lg font-bold tracking-widest mt-6 rounded-none shadow-[0_4px_20px_rgba(209,50,50,0.3)] hover:shadow-[0_4px_30px_rgba(209,50,50,0.5)] transition-all">
-                {t("inspections.booking.submit")}
-              </Button>
-            </form>
-          </div>
-        </div>
-      </section>
-
       {/* 8️⃣ Brands We Serve */}
       <section className="py-24 bg-background border-t border-white/5">
         <div className="container mx-auto px-6 text-center">
@@ -369,7 +262,9 @@ export default function InspectionsPage() {
           </p>
         </div>
       </section>
-
+      <div className="md:mx-[5%]">
+        <Contact />
+      </div>
       <Footer />
     </main>
   );

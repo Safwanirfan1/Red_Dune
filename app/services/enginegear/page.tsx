@@ -4,10 +4,14 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MoveRight } from "lucide-react";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { Contact } from "@/components/sections/Contact";
 
 export default function EngineGearboxPage() {
     return (
-        <div className="bg-white text-black font-sans">
+        <div className="bg-white text-black font-sans mt-16">
+            <Header/>
             {/* SECTION 1: Top Hero Split Layout */}
             {/* Layout: 2 Columns. Left: Text. Right: Image. */}
             <section className="py-20 px-6 lg:px-20 container mx-auto">
@@ -15,7 +19,7 @@ export default function EngineGearboxPage() {
                     {/* LEFT SIDE */}
                     <div className="flex flex-col items-start space-y-6">
                         <span className="text-[#E10600] font-bold tracking-widest uppercase text-sm">
-                            GERMAN Experts Overhauling
+                            Red Dune German Experts Overhauling
                         </span>
                         <h1 className="text-4xl md:text-5xl font-extrabold text-black leading-tight">
                             Gearbox Overhauling
@@ -119,7 +123,7 @@ export default function EngineGearboxPage() {
                                 Our research and development program for engines and
                                 transmissions is extensive just to stay in the loop with all the
                                 latest developments. No matter how difficult the task may be,
-                                German Experts will never compromise on the quality or
+                               red Dune German Experts will never compromise on the quality or
                                 performance of our products.
                             </p>
                             <p>
@@ -405,68 +409,10 @@ export default function EngineGearboxPage() {
 
             {/* FINAL SECTION (CONTACT AREA) */}
             <section id="contact" className="py-20 px-6 lg:px-20 bg-gray-100">
-                <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                    {/* LEFT: Info & Image */}
-                    <div className="flex flex-col space-y-8">
-                        <div>
-                            <h2 className="text-5xl md:text-6xl font-extrabold text-[#E10600] leading-none mb-4">
-                                GET IN TOUCH
-                            </h2>
-                            <p className="text-2xl text-black font-semibold">
-                                Connect With Us And Join Our Client List
-                            </p>
-                        </div>
-                        <div className="relative h-[300px] w-full mt-auto">
-                            <Image
-                                src="/images/"
-                                alt="Luxury Car"
-                                fill
-                                className="object-cover rounded-lg"
-                            />
-                        </div>
-                    </div>
-
-                    {/* RIGHT: Contact Form */}
-                    <div className="bg-white p-8 md:p-12 shadow-sm rounded-sm">
-                        <form className="space-y-8">
-                            <div className="relative">
-                                <input
-                                    type="text"
-                                    placeholder="Name"
-                                    className="w-full border-b border-gray-300 py-3 text-lg focus:outline-none focus:border-[#E10600] transition-colors placeholder-gray-500"
-                                />
-                            </div>
-                            <div className="relative">
-                                <input
-                                    type="email"
-                                    placeholder="Email"
-                                    className="w-full border-b border-gray-300 py-3 text-lg focus:outline-none focus:border-[#E10600] transition-colors placeholder-gray-500"
-                                />
-                            </div>
-                            <div className="relative">
-                                <input
-                                    type="tel"
-                                    placeholder="Phone Number"
-                                    className="w-full border-b border-gray-300 py-3 text-lg focus:outline-none focus:border-[#E10600] transition-colors placeholder-gray-500"
-                                />
-                            </div>
-                            <div className="relative">
-                                <textarea
-                                    placeholder="Message"
-                                    rows={4}
-                                    className="w-full border-b border-gray-300 py-3 text-lg focus:outline-none focus:border-[#E10600] transition-colors placeholder-gray-500 resize-none"
-                                ></textarea>
-                            </div>
-                            <button
-                                type="submit"
-                                className="w-full bg-[#E10600] text-white font-bold py-4 uppercase tracking-widest text-sm hover:bg-black transition-colors duration-300"
-                            >
-                                Send
-                            </button>
-                        </form>
-                    </div>
-                </div>
+                
+                <Contact/>
             </section>
+            <Footer/>
         </div>
     );
 }

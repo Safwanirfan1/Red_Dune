@@ -21,6 +21,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { Contact } from "@/components/sections/Contact";
 
 const WHY_CHOOSE_KEYS = [
   "standalone",
@@ -320,7 +321,7 @@ export default function ServiceContractPage() {
           </div>
         </div>
       </section>
-
+      <Contact />
       <Footer />
     </main>
   );

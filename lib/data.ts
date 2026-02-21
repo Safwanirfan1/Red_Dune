@@ -11,7 +11,6 @@ export const SITE_CONFIG = {
     navItems: [
         { label: "Home", href: "/" },
         { label: "Services", href: "/services" },
-        { label: "Brands", href: "/#brands" },
         { label: "Products", href: "/#products" },
         { label: "Contact", href: "/#contact" },
     ],
@@ -70,7 +69,7 @@ export const PRODUCT_DETAILS = [
     {
         id: "spare-parts",
         title: "Genuine Spare Parts",
-        description: "At Red Dune, we understand that every part plays a crucial role in your vehicle's performance and safety. We supply 100% authentic OEM (Original Equipment Manufacturer) spare parts for all major German luxury brands. Our global supply network ensures that even hard-to-find components are sourced quickly, guaranteeing that your vehicle maintains its factory specifications and value.",
+        description: "At Red Dune, we understand that every part plays a crucial role in your vehicle's performance and safety. We supply 100% authentic OEM (Original Equipment Manufacturer) spare parts for all major all luxury brands. Our global supply network ensures that even hard-to-find components are sourced quickly, guaranteeing that your vehicle maintains its factory specifications and value.",
         features: ["100% Genuine OEM Parts", "12-Month Warranty", "Express Global Shipping", "Competitive Market Rates"],
         benefits: [
             { title: "Factory Precision", description: "Parts designed specifically for your vehicle model ensure perfect fit and optimal performance." },
@@ -204,8 +203,8 @@ export const SERVICE_DETAILS = [
 
 export const FEATURES = [
     {
-        title: "German Experts",
-        description: "Certified technicians specializing in German luxury vehicles.",
+        title: "Red Dune German Experts",
+        description: "Certified technicians specializing in all luxury vehicles.",
         icon: ShieldCheck,
     },
     {
@@ -250,16 +249,14 @@ export const BLOG_POSTS = [
 ];
 
 export const WORKSHOP_SERVICES = [
-    { id: "ws-workshop", title: "Engine Managemnt System", icon: Settings, description: "Advanced diagnostic and repair workshop.", image: "/images/engineering.jpg", },
-    { id: "ws-bodyshop", title: "Car Comfort", icon: ShieldCheck, description: "Expert body repair and painting.", image: "/images/2.jpg" },
-    { id: "ws-programming", title: "Brake System", icon: Cpu, description: "ECU coding and software updates.", image: "/images/s2.jpg" },
-    { id: "ws-engine", title: "Oil Change Service", icon: Cog, description: "Complete engine and transmission overhaul.", image: "/images/oil.jpg" },
-    { id: "ws-recovery", title: "Wheel Alignment", icon: Car, description: "24/7 vehicle recovery and towing.", image: "/images/wheel.jpg" },
+    { id: "ws-workshop", title: "Engine Managemnt System", icon: Settings, description: "Advanced diagnostic and repair workshop.", image: "/images/engineering.jpg", href: "/services/workshop/engine-management-system" },
+    { id: "ws-bodyshop", title: "Car Comfort", icon: ShieldCheck, description: "Expert body repair and painting.", image: "/images/2.jpg", href: "/services/workshop/comfort-system" },
+    { id: "ws-programming", title: "Brake System", icon: Cpu, description: "ECU coding and software updates.", image: "/images/s2.jpg", href: "/services/workshop/brake-system" },
+    { id: "ws-engine", title: "Oil Change Service", icon: Cog, description: "Complete engine and transmission overhaul.", image: "/images/oil.jpg", href: "/services/workshop/oil-change" },
+    { id: "ws-recovery", title: "Wheel Alignment", icon: Car, description: "24/7 vehicle recovery and towing.", image: "/images/wheel.jpg", href: "/services/workshop/wheel-alignment" },
     // { id: "ws-dashboard", title: "Dashboard Repair", icon: Gauge, description: "Instrument cluster and dashboard fixing.", image: "/images/services/dashboard.jpg" },
-    { id: "ws-headlight", title: "Stop & Go Service", icon: Zap, description: "Crystal clear headlight restoration.", image: "/images/headlight.jpg" },
-    { id: "ws-windshield", title: "Radiator Service", icon: AppWindow, description: "Professional glass replacement.", image: "/images/radiator.jpg" },
-    { id: "ws-dent", title: "Transmission rRpair", icon: ShieldCheck, description: "Remove dents without repainting.", image: "/images/transmission.jpg" },
-    { id: "ws-roof", title: "Fuel Injection Service", icon: MoveVertical, description: "Fixing sagging or damaged roof liners.", image: "/images/fuel.jpg" },
+    { id: "ws-headlight", title: "Stop & Go Service", icon: Zap, description: "Crystal clear headlight restoration.", image: "/images/headlight.jpg", href: "/services/workshop/stop-go" },
+    { id: "ws-roof", title: "Fuel Injection Service", icon: MoveVertical, description: "Fixing sagging or damaged roof liners.", image: "/images/fuel.jpg", href: "/services/workshop/fuel-injection" },
     // { id: "ws-ac", title: "AC Repair", icon: Wind, description: "Complete climate control restoration.", image: "/images/services/ac.jpg" },
     // { id: "ws-brake", title: "Brake Service", icon: Disc, description: "Pad and rotor replacement.", image: "/images/services/brake.jpg" },
     // { id: "ws-suspension", title: "Suspension Repair", icon: Activity, description: "Shocks, struts, and arm replacement.", image: "/images/services/suspension.jpg" },
@@ -288,8 +285,127 @@ export const BODYSHOP_SERVICES = [
 ];
 
 export const ENGINEERING_SERVICES = [
-    { id: "eng-retrofit", title: "Retrofit", icon: Settings, description: "Upgrading older vehicles with modern features.", image: "/images/retrofit.jfif" },
-    { id: "eng-radar", title: "Radar Calibration", icon: CircleDot, description: "Precision calibration for safety systems.", image: "/images/radar.jfif" },
-    { id: "eng-nav", title: "Navigation Update", icon: AppWindow, description: "Latest maps and software for your GPS.", image: "/images/navigation.jfif" },
-    { id: "eng-programming", title: "Programming", icon: Cpu, description: "Software programming and module coding.", image: "/images/programming.jfif" },
+    { id: "eng-retrofit", title: "Retrofit", icon: Settings, description: "Upgrading older vehicles with modern features.", image: "/images/retrofit.jfif", href: "/services/engineering/retrofit" },
+    { id: "eng-radar", title: "Radar Calibration", icon: CircleDot, description: "Precision calibration for safety systems.", image: "/images/radar.jfif", href: "/services/engineering/radar" },
+    { id: "eng-nav", title: "Navigation Update", icon: AppWindow, description: "Latest maps and software for your GPS.", image: "/images/navigation.jfif", href: "/services/engineering/navigation" },
+    { id: "eng-programming", title: "Programming", icon: Cpu, description: "Software programming and module coding.", image: "/images/programming.jfif", href: "/services/engineering/programming" },
+];
+
+export const ENGINEERING_PAGE_DATA = [
+    {
+        id: "radar",
+        title: "Radar Calibration",
+        sections: [
+            {
+                heading: "ADAS & Radar Calibration",
+                description: "Advanced Driver Assistance Systems (ADAS) like adaptive cruise control, lane departure warning, and emergency braking rely on precise radar sensors. Even a slight misalignment due to a minor bump or windshield replacement can compromise your safety. At Red Dune, we use manufacturer-approved calibration equipment to ensure every sensor is perfectly aligned to factory specifications.",
+                image: "/images/radar.jfif",
+            },
+            {
+                heading: "How Often Should You Calibrate?",
+                description: "Regular calibration is essential for maintaining the integrity of your car's safety systems. We recommend a check-up if you experience any of the following:",
+                image: "/images/services.jpg",
+                list: [
+                    "After a front-end collision or minor bumper impact",
+                    "Following a windshield replacement (for camera-based systems)",
+                    "If you notice warnings on your dashboard related to ADAS",
+                    "After suspension repairs or wheel alignment changes",
+                    "If the adaptive cruise control feels inconsistent"
+                ]
+            },
+            {
+                heading: "Why Choose Red Dune for Radar Calibration?",
+                description: "Our team is equipped with the latest diagnostic and calibration tools specifically designed for All luxury brands. We don't just clear error codes; we perform physical and software-based alignment to ensure 100% accuracy.",
+                image: "/images/engineering.jpg",
+                cta: "Reach us now"
+            }
+        ]
+    },
+    {
+        id: "programming",
+        title: "Software Programming & Coding",
+        sections: [
+            {
+                heading: "Advanced ECU Programming",
+                description: "Modern luxury vehicles are essentially computers on wheels. Every component, from the headlights to the transmission, is controlled by specialized software. Our programming services ensure that your vehicle's modules are running the latest software versions for optimal performance, fuel efficiency, and feature availability.",
+                image: "/images/programming.jfif",
+            },
+            {
+                heading: "Module Coding & Customization",
+                description: "Replacing a module in a German car often requires specialized coding to match it with the vehicle's VIN and other systems. We provide expert coding services for:",
+                image: "/images/s2.jpg",
+                list: [
+                    "New engine and transmission control modules",
+                    "Comfort systems and lighting control coding",
+                    "Enabling hidden factory features (where possible)",
+                    "Language conversions and infotainment updates",
+                    "Software error resolution and flashing"
+                ]
+            },
+            {
+                heading: "Expert Diagnostic Solutions",
+                description: "Using OEM-level diagnostic software, we can identify and fix complex software glitches that generic scanners miss. Your car's digital health is our priority.",
+                image: "/images/engineering.jpg",
+                cta: "Reach us now"
+            }
+        ]
+    },
+    {
+        id: "retrofit",
+        title: "Vehicle Retrofitting",
+        sections: [
+            {
+                heading: "Modernize Your Luxury Vehicle",
+                description: "Wish your older model had the latest tech? Our retrofitting services allow you to upgrade your vehicle with modern features that were either optional or not available when it was built. We use genuine components and factory-style wiring to ensure a seamless integration.",
+                image: "/images/retrofit.jfif",
+            },
+            {
+                heading: "Popular Retrofit Options",
+                description: "Enhance your driving experience with high-quality upgrades tailored to your specific model:",
+                image: "/images/2.jpg",
+                list: [
+                    "Apple CarPlay & Android Auto integration",
+                    "Original ambient lighting systems",
+                    "Surround-view and reverse camera installations",
+                    "Digital instrument cluster (Virtual Cockpit) upgrades",
+                    "Soft-close door systems and power tailgates"
+                ]
+            },
+            {
+                heading: "Factory Finish & Integration",
+                description: "We take pride in our 'OEM Plus' approach. Every retrofit is performed with the same care and precision as if it were installed on the production line, maintaining your car's premium feel.",
+                image: "/images/classic.jfif",
+                cta: "Reach us now"
+            }
+        ]
+    },
+    {
+        id: "navigation",
+        title: "Navigation & Infotainment Updates",
+        sections: [
+            {
+                heading: "Latest Map & Software Updates",
+                description: "Don't let outdated maps lead you astray. We provide the latest GPS database updates for all major all luxury car brands, ensuring you have the most accurate routes, points of interest, and speed limit information available for the UAE and GCC region.",
+                image: "/images/navigation.jfif",
+            },
+            {
+                heading: "Enhanced Infotainment Experience",
+                description: "Beyond maps, navigation updates often include improvements to the overall system performance, Bluetooth connectivity, and media compatibility. Our updates cover:",
+                image: "/images/s2.jpg",
+                list: [
+                    "Official GCC map database updates",
+                    "Infotainment system firmware flashing",
+                    "Solving GPS signal and positioning issues",
+                    "Adding New POIs (Points of Interest)",
+                    "System responsiveness optimizations"
+                ]
+            },
+            {
+                heading: "Stay Connected & On Track",
+                description: "A modern, updated navigation system is more than just a map; it's a co-pilot that ensures your journey is smooth and efficient. Let us handle the technical side so you can enjoy the drive.",
+                image: "/images/engineering.jpg",
+                cta: "Reach us now"
+            }
+        ]
+    }
 ];

@@ -26,7 +26,7 @@ export const translations = {
             pricing: "Transparent Pricing",
             cards: {
                 germanExperts: {
-                    title: "German Experts",
+                    title: "Red Dune German Experts",
                     description: "Certified technicians specializing in German luxury vehicles."
                 },
                 diagnostics: {
@@ -46,7 +46,7 @@ export const translations = {
         services: {
             title: "Our Premium Services",
             subtitle: "What We Do",
-            description: "We offer a complete range of automotive solutions, delivering German engineering precision for your vehicle.",
+            description: "We offer a complete range of automotive solutions, delivering red dune engineering precision for your vehicle.",
             viewAll: "View All Services",
             items: {
                 service: {
@@ -225,7 +225,7 @@ export const translations = {
                 title1: "Pre-Purchase",
                 title2: "Inspection Process",
                 title3: "in Dubai & Abu Dhabi",
-                description: "One of the most important factors affecting vehicle performance and safety is its overall condition. At German Experts, our team conducts a long and detailed process while inspecting a used car. Using advanced tools such as laser scanners and precision diagnostics, we deliver a full inspection report detailing the car's condition and pricing."
+                description: "One of the most important factors affecting vehicle performance and safety is its overall condition. At Red dune German Experts, our team conducts a long and detailed process while inspecting a used car. Using advanced tools such as laser scanners and precision diagnostics, we deliver a full inspection report detailing the car's condition and pricing."
             },
             whyPickUs: {
                 title1: "Why",
@@ -242,7 +242,6 @@ export const translations = {
                     pricing: { title: "Competitive Pricing", desc: "Review pricing for the best value." },
                     report12: { title: "12-Page Report", desc: "Comprehensive detailed inspection report." },
                     estimation: { title: "Free Estimation", desc: "Detailed repair estimation if required." },
-                    warranty: { title: "GE Warranty", desc: "Certified for German Experts Warranty." },
                     mileage: { title: "Mileage & Compression", desc: "Verification of mileage and engine health." }
                 }
             },
@@ -285,7 +284,7 @@ export const translations = {
         spareParts: {
             hero: {
                 title1: "Premium Genuine Spare Parts",
-                title2: "German & Luxury Cars",
+                title2: "all Luxury Cars",
                 description: "Experience the pinnacle of performance with authentic components sourced for reliability, safety, and durability.",
                 inquireNow: "INQUIRE NOW"
             },
