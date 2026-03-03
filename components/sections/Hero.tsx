@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/Button";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export function Hero() {
@@ -19,8 +18,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0">
         {/* Left Side - Pink to Red */}
         <div
-          className="absolute  inset-0 bg-gradient-to-b from-[#dfabab] via-[#cf1a1a] to-[#5e1717] 
-                "
+          className="absolute inset-0 bg-linear-to-b from-[#dfabab] via-[#cf1a1a] to-[#5e1717]"
           style={{
             clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
           }}
@@ -28,14 +26,14 @@ export function Hero() {
 
         {/* Right Side - Dark Blue with Engine Image */}
         <div
-          className="absolute inset-0 bg-gradient-to-b from-[#ff0404] via-[#000000] to-[#000000] "
+          className="absolute inset-0 bg-linear-to-b from-[#ff0404] via-[#000000] to-[#000000]"
           style={{
             clipPath: "polygon(55% 0, 100% 0, 100% 100%, 35% 100%)",
           }}
         >
-          <div className="absolute inset-0 shadow-2xs shadow-red-500">
+          <div className="absolute inset-0 shadow-2xs shadow-red-500 -mr-80">
             <Image
-              src="/BG.jpg"
+              src="/BG.png"
               alt="Engine Background"
               fill
               className="object-cover opacity-40"
@@ -43,11 +41,11 @@ export function Hero() {
             />
           </div>
           {/* Red Glow Bottom Right */}
-          <div className="absolute bottom-0 right-0 w-[70%] h-[70%] bg-gradient-to-tl from-[#b1122b]/40 via-[#7a0f1f]/20 to-transparent blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-[70%] h-[70%] bg-linear-to-tl from-[#b1122b]/40 via-[#7a0f1f]/20 to-transparent blur-3xl pointer-events-none" />
         </div>
 
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 mix-blend-overlay" />
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-linear-to-t from-background to-transparent" />
       </div>
 
       {/* Main Flex Container: column-reverse on mobile (car on top, text below), row on md+ */}
@@ -64,11 +62,10 @@ export function Hero() {
             className={`
                             w-full text-white space-y-4 sm:space-y-5 md:space-y-6 lg:space-y-8
                             max-w-[90%] xs:max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl
-                            ${
-                              direction === "rtl"
-                                ? "mr-0 sm:mr-4 md:mr-8 lg:mr-12 xl:mr-16"
-                                : "ml-0 sm:ml-4 md:ml-8 lg:ml-12 xl:ml-16"
-                            }
+                            ${direction === "rtl"
+                ? "mr-0 sm:mr-4 md:mr-8 lg:mr-12 xl:mr-16"
+                : "ml-0 sm:ml-4 md:ml-8 lg:ml-12 xl:ml-16"
+              }
                         `}
             data-aos="fade-up"
             data-aos-duration="1000"
@@ -94,11 +91,11 @@ export function Hero() {
                             2xl:text-[7rem]
                         "
             >
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-red-500">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-black via-black to-white">
                 RED
               </span>{" "}
               DUNE German
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-red-500">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-black via-black to-white">
                 {" "}
                 EXPERTS.
               </span>
@@ -132,41 +129,24 @@ export function Hero() {
                 {t("hero.tagline")}
               </p>
             </div>
-
-            {/* CTA Buttons - Responsive */}
-            <div className="flex flex-col xs:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
-              <Button
-                size="lg"
-                className="
-                                    bg-red-600 hover:bg-red-700 text-white font-bold uppercase tracking-wider
-                                    rounded-full shadow-2xl shadow-red-600/50 transition-all hover:scale-105
-                                    text-xs px-4 py-4
-                                    xs:text-sm xs:px-6 xs:py-5
-                                    sm:text-base sm:px-8 sm:py-6
-                                    md:text-lg
-                                "
-              >
-                {t("hero.cta")}
-              </Button>
-            </div>
           </div>
         </div>
 
         {/* Right Part - Car Image (goes to top on mobile) */}
         <div
           className="relative w-full md:w-1/2 flex items-center justify-center
-                    h-[40vh] sm:h-[45vh] md:h-screen
+                    h-[35vh] xs:h-[40vh] sm:h-[45vh] md:h-screen xl:-ml-36
                    "
         >
           <div
             className="
-                            relative w-[100%] h-[100%]
-                            sm:w-[100%] sm:h-[100%] 
+                            relative w-[110%] h-[110%]
+                            sm:w-full sm:h-full 
                             md:absolute md:top-1/2 md:-translate-y-1/2
-                            md:-right-[4rem] md:w-[650px] md:h-[670px]
-                            lg:-right-[10rem] lg:w-[950px] lg:h-[980px]
-                            xl:-right-[14rem] xl:w-[1050px] xl:h-[1090px]
-                            2xl:-right-[18rem] 2xl:w-[1150px] 2xl:h-[1200px]
+                            md:-right-16 md:w-[650px] md:h-[670px]
+                            lg:-right-40 lg:w-[950px] lg:h-[980px]
+                            xl:-right-56 xl:w-[1050px] xl:h-[1090px]
+                            2xl:-right-72 2xl:w-[1150px] 2xl:h-[1200px]
                         "
             data-aos="fade-left"
             data-aos-duration="1200"
@@ -174,10 +154,10 @@ export function Hero() {
             data-aos-offset="0"
           >
             <Image
-              src="/BG2.png"
+              src="/BG.png"
               alt="Red Dune Car"
               fill
-              className="object-contain drop-shadow-2xl"
+              className="object-contain drop-shadow-2xl translate-x-4 md:translate-x-0"
               priority
               quality={90}
             />

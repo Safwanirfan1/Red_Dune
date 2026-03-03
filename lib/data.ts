@@ -1,133 +1,168 @@
 import {
     Car, Settings, BarChart3, AppWindow, ShieldCheck, Zap,
-    Droplet, Cpu, CircleDot, Activity, Disc,
-    ClipboardCheck, Armchair, Gauge, Settings2, Cog,
-    MoveVertical, GitMerge, Wind
+    Cpu, CircleDot, Disc,
+    Armchair, Cog,
+    MoveVertical, Battery, Clock, RotateCcw
 } from "lucide-react";
 
 export const SITE_CONFIG = {
     name: "Red Dune",
-    description: "Premium Automotive Services in UAE",
+    description: "siteConfig.description",
     navItems: [
-        { label: "Home", href: "/" },
-        { label: "Services", href: "/services" },
-        { label: "Products", href: "/#products" },
-        { label: "Contact", href: "/#contact" },
+        { label: "nav.home", href: "/" },
+        { label: "nav.services", href: "/services" },
+        { label: "nav.products", href: "/#products" },
+        { label: "nav.contact", href: "/contact" },
     ],
 };
 
 export const NAV_DROPDOWNS = {
     services: [
-        { label: "Recovery Services", href: "/services/recovery" },
-        { label: "Engine & Gearbox", href: "/services/enginegear" },
-        { label: "Engineering & Programming", href: "/services/engineering" },
-        { label: "Body Shop", href: "/services/bodyshop" },
-        { label: "Workshop", href: "/services/workshop" },
+        { label: "nav.recovery", href: "/services/recovery" },
+        { label: "nav.engineGear", href: "/services/enginegear" },
+        { label: "nav.engineering", href: "/services/engineering" },
+        { label: "nav.bodyShop", href: "/services/bodyshop" },
+        { label: "nav.workshop", href: "/services/workshop" },
     ],
     brands: [
         // Column 1
         [
-            { label: "Aston Martin", href: "/#brands" },
-            { label: "Ferrari", href: "/#brands" },
-            { label: "Maserati", href: "/#brands" },
-            { label: "Rolls Royce", href: "/#brands" },
-            { label: "Bugatti", href: "/#brands" },
+            { label: "brands.names.astonMartin", href: "/#brands" },
+            { label: "brands.names.ferrari", href: "/#brands" },
+            { label: "brands.names.maserati", href: "/#brands" },
+            { label: "brands.names.rollsRoyce", href: "/#brands" },
+            { label: "brands.names.bugatti", href: "/#brands" },
         ],
         // Column 2
         [
-            { label: "Audi", href: "/#brands" },
-            { label: "Jaguar", href: "/#brands" },
-            { label: "Mercedes", href: "/#brands" },
-            { label: "McLaren", href: "/#brands" },
-            { label: "Maybach", href: "/#brands" },
+            { label: "brands.names.audi", href: "/#brands" },
+            { label: "brands.names.jaguar", href: "/#brands" },
+            { label: "brands.names.mercedes", href: "/#brands" },
+            { label: "brands.names.mclaren", href: "/#brands" },
+            { label: "brands.names.maybach", href: "/#brands" },
         ],
         // Column 3
         [
-            { label: "Bentley", href: "/#brands" },
-            { label: "Lamborghini", href: "/#brands" },
-            { label: "Range Rover", href: "/#brands" },
-            { label: "Volkswagen", href: "/#brands" },
-            { label: "Mini Cooper", href: "/#brands" },
+            { label: "brands.names.bentley", href: "/#brands" },
+            { label: "brands.names.lamborghini", href: "/#brands" },
+            { label: "brands.names.rangeRover", href: "/#brands" },
+            { label: "brands.names.volkswagen", href: "/#brands" },
+            { label: "brands.names.miniCooper", href: "/#brands" },
         ],
         // Column 4
         [
-            { label: "BMW", href: "/#brands" },
-            { label: "Land Rover", href: "/#brands" },
-            { label: "Porsche", href: "/#brands" },
-            { label: "Alfa Romeo", href: "/#brands" },
-            { label: "Smart Car", href: "/#brands" },
+            { label: "brands.names.bmw", href: "/#brands" },
+            { label: "brands.names.landRover", href: "/#brands" },
+            { label: "brands.names.porsche", href: "/#brands" },
+            { label: "brands.names.alfaRomeo", href: "/#brands" },
+            { label: "brands.names.smart", href: "/#brands" },
         ],
     ],
     products: [
-        { label: "Spare Parts", href: "/products/spare-parts" },
-        { label: "Service Contract", href: "/products/service-contract" },
-        { label: "360 Inspections", href: "/products/360-inspections" },
+        { label: "nav.spareParts", href: "/products/spare-parts" },
+        { label: "nav.serviceContract", href: "/products/service-contract" },
+        { label: "nav.inspections", href: "/products/360-inspections" },
     ],
+};
+
+export const CONTACT_DATA = {
+    phone: "+971 56 776 5665",
+    phoneDisplay: "+971 56 776 5665",
+    email: "info@reddune.ae",
+    address: "footer.address",
+    workingHours: "nav.workingHours",
+    googleMapsUrl: "https://www.google.com/maps?q=25.10978889465332,55.227561950683594&z=17&hl=en",
+    embedMapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115682.02874133959!2d55.15555627622875!3d25.02980590326476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f727c9135a575%3A0x633d749be9d4a8e3!2sGerman%20Experts%20Car%20Maintenance%20-%20Dubai!5e0!3m2!1sen!2sae!4v1700000000000!5m2!1sen!2sae"
 };
 
 export const PRODUCT_DETAILS = [
     {
         id: "spare-parts",
-        title: "Genuine Spare Parts",
-        description: "At Red Dune, we understand that every part plays a crucial role in your vehicle's performance and safety. We supply 100% authentic OEM (Original Equipment Manufacturer) spare parts for all major all luxury brands. Our global supply network ensures that even hard-to-find components are sourced quickly, guaranteeing that your vehicle maintains its factory specifications and value.",
-        features: ["100% Genuine OEM Parts", "12-Month Warranty", "Express Global Shipping", "Competitive Market Rates"],
+        title: "products.spareParts.title",
+        description: "products.spareParts.description",
+        features: [
+            "products.spareParts.features.0",
+            "products.spareParts.features.1",
+            "products.spareParts.features.2",
+            "products.spareParts.features.3",
+        ],
         benefits: [
-            { title: "Factory Precision", description: "Parts designed specifically for your vehicle model ensure perfect fit and optimal performance." },
-            { title: "Longevity", description: "Genuine parts are built to last, reducing the need for frequent replacements and saving money in the long run." },
-            { title: "Resale Value", description: "Maintaining your car with original parts preserves its history and keeps its resale value high." },
-            { title: "Safety Assurance", description: "Never compromise on safety with counterfeit alternatives. Our parts meet strict safety standards." }
+            { title: "products.spareParts.benefits.0.title", description: "products.spareParts.benefits.0.desc" },
+            { title: "products.spareParts.benefits.1.title", description: "products.spareParts.benefits.1.desc" },
+            { title: "products.spareParts.benefits.2.title", description: "products.spareParts.benefits.2.desc" },
+            { title: "products.spareParts.benefits.3.title", description: "products.spareParts.benefits.3.desc" },
         ],
         image: "/images/products/spare-parts.jpg",
     },
     {
         id: "service-contract",
-        title: "Service Contract",
-        description: "Enjoy complete peace of mind and significant savings with our tailored Service Contracts. Designed to cover all your scheduled maintenance needs, our packages protect you from inflation and unexpected price rises. Whether you drive a daily commuter or a weekend sports car, we have a plan that fits your mileage and usage perfectly.",
-        features: ["Up to 40% Savings", "Inflation Proof", "Transferable Benefits", "Full Service History"],
+        title: "products.serviceContract.title",
+        description: "products.serviceContract.description",
+        features: [
+            "products.serviceContract.features.0",
+            "products.serviceContract.features.1",
+            "products.serviceContract.features.2",
+            "products.serviceContract.features.3",
+        ],
         benefits: [
-            { title: "Cost Control", description: "Lock in today's labor and parts prices for the duration of your contract, avoiding future price hikes." },
-            { title: "Regular Care", description: "Scheduled servicing ensures your vehicle runs efficiently and prevents minor issues from becoming major repairs." },
-            { title: "Priority Status", description: "Contract holders receive priority booking and expedited service at our centers." },
-            { title: "Certified Expertise", description: "All work is performed by our certified German car specialists using official manufacturer guidelines." }
+            { title: "products.serviceContract.benefits.0.title", description: "products.serviceContract.benefits.0.desc" },
+            { title: "products.serviceContract.benefits.1.title", description: "products.serviceContract.benefits.1.desc" },
+            { title: "products.serviceContract.benefits.2.title", description: "products.serviceContract.benefits.2.desc" },
+            { title: "products.serviceContract.benefits.3.title", description: "products.serviceContract.benefits.3.desc" },
         ],
         image: "/images/products/service-contract.jpg",
     },
     {
         id: "warranty-contract",
-        title: "Warranty Contract",
-        description: "Drive with confidence knowing that you are protected against unexpected mechanical and electrical failures. Our Extended Warranty Contracts offer comprehensive coverage similar to your manufacturer's warranty, picking up where it left off. From engine and transmission to complex electronics, we've got you covered.",
-        features: ["Comprehensive Coverage", "Zero Deductible", "24/7 Roadside Assist", "High Claim Limits"],
+        title: "products.warrantyContract.title",
+        description: "products.warrantyContract.description",
+        features: [
+            "products.warrantyContract.features.0",
+            "products.warrantyContract.features.1",
+            "products.warrantyContract.features.2",
+            "products.warrantyContract.features.3",
+        ],
         benefits: [
-            { title: "Major Systems Covered", description: "Protection for Engine, Gearbox, Differential, AC System, Electrical Components, and more." },
-            { title: "Hassle-Free Claims", description: "We handle all the paperwork and direct billing, so you don't have to pay out of pocket for covered repairs." },
-            { title: "Transferable", description: "Increase your car's resale value by transferring the warranty to the new owner." },
-            { title: "Unlimited Mileage", description: "Options available for unlimited mileage coverage to suit your driving habits." }
+            { title: "products.warrantyContract.benefits.0.title", description: "products.warrantyContract.benefits.0.desc" },
+            { title: "products.warrantyContract.benefits.1.title", description: "products.warrantyContract.benefits.1.desc" },
+            { title: "products.warrantyContract.benefits.2.title", description: "products.warrantyContract.benefits.2.desc" },
+            { title: "products.warrantyContract.benefits.3.title", description: "products.warrantyContract.benefits.3.desc" },
         ],
         image: "/images/products/warranty.jpg",
     },
     {
         id: "360-inspections",
-        title: "360 Inspections",
-        description: "Buying a pre-owned luxury car? Ensure you're making a smart investment with our comprehensive 360-degree Inspection. Our certified technicians perform a rigorous 111-point check covering every aspect of the vehicle, from the engine and chassis to the paintwork and interior electronics. You receive a detailed digital report with photos and expert recommendations.",
-        features: ["111-Point Check", "Digital Report", "Paint Depth Analysis", "Computer Diagnostics"],
+        title: "products.inspections360.title",
+        description: "products.inspections360.description",
+        features: [
+            "products.inspections360.features.0",
+            "products.inspections360.features.1",
+            "products.inspections360.features.2",
+            "products.inspections360.features.3",
+        ],
         benefits: [
-            { title: "Hidden Issue Detection", description: "We identify past accident damage, resprayed panels, and mechanical faults that aren't visible to the naked eye." },
-            { title: "Negotiation Power", description: "Use our unbiased report to negotiate a fair price based on the vehicle's true condition." },
-            { title: "Peace of Mind", description: "Buy with confidence knowing exactly what you're getting into, with no nasty surprises later." },
-            { title: "Test Drive Analysis", description: "Our experts road-test the vehicle to check for noises, vibrations, and handling issues." }
+            { title: "products.inspections360.benefits.0.title", description: "products.inspections360.benefits.0.desc" },
+            { title: "products.inspections360.benefits.1.title", description: "products.inspections360.benefits.1.desc" },
+            { title: "products.inspections360.benefits.2.title", description: "products.inspections360.benefits.2.desc" },
+            { title: "products.inspections360.benefits.3.title", description: "products.inspections360.benefits.3.desc" },
         ],
         image: "/images/products/inspection.jpg",
     },
     {
         id: "insurance",
-        title: "Car Insurance",
-        description: "Navigating car insurance can be complex. We simplify the process by partnering with the UAE's leading insurance providers to offer you the best coverage at competitive rates. Beyond just selling a policy, we manage the entire claims process for you—from accident recovery to final repair—ensuring your car is restored to factory standards at Red Dune.",
-        features: ["Best Rates", "Claims Management", "Agency Repair Option", "Replacement Car"],
+        title: "products.insurance.title",
+        description: "products.insurance.description",
+        features: [
+            "products.insurance.features.0",
+            "products.insurance.features.1",
+            "products.insurance.features.2",
+            "products.insurance.features.3",
+        ],
         benefits: [
-            { title: "One-Stop Solution", description: "We handle everything: policy issuance, renewal, and claims. You just drive." },
-            { title: "Guaranteed Repairs", description: "Policies purchased through us guarantee repairs at Red Dune with genuine parts." },
-            { title: "Claims Advocacy", description: "We fight for your rights effectively to ensure your claim is approved and processed quickly." },
-            { title: "Tailored Coverage", description: "Get coverage that actually matches your high-value vehicle's needs, including off-road and GCC cover." }
+            { title: "products.insurance.benefits.0.title", description: "products.insurance.benefits.0.desc" },
+            { title: "products.insurance.benefits.1.title", description: "products.insurance.benefits.1.desc" },
+            { title: "products.insurance.benefits.2.title", description: "products.insurance.benefits.2.desc" },
+            { title: "products.insurance.benefits.3.title", description: "products.insurance.benefits.3.desc" },
         ],
         image: "/images/products/insurance.jpg",
     },
@@ -135,23 +170,23 @@ export const PRODUCT_DETAILS = [
 
 export const SERVICES = [
     {
-        title: "Performance Tuning",
-        description: "Optimize your vehicle's engine for peak performance and efficiency.",
+        title: "services.smallCards.performance.title",
+        description: "services.smallCards.performance.desc",
         icon: Zap,
     },
     {
-        title: "Maintenance & Repair",
-        description: "Comprehensive diagnostics and repair services for all luxury car brands.",
+        title: "services.smallCards.maintenance.title",
+        description: "services.smallCards.maintenance.desc",
         icon: Settings,
     },
     {
-        title: "Body Shop & Painting",
-        description: "State-of-the-art body repair and premium paint services.",
+        title: "services.smallCards.bodyshop.title",
+        description: "services.smallCards.bodyshop.desc",
         icon: Car,
     },
     {
-        title: "Detailing & Protection",
-        description: "Ceramic coating, PPF, and interior detailing to keep your car looking new.",
+        title: "services.smallCards.detailing.title",
+        description: "services.smallCards.detailing.desc",
         icon: ShieldCheck,
     },
 ];
@@ -159,67 +194,67 @@ export const SERVICES = [
 export const SERVICE_DETAILS = [
     {
         id: "service",
-        title: "SERVICE",
-        description: "Our comprehensive service packages ensure your vehicle performs at its best. From routine maintenance to complex repairs, our certified technicians use state-of-the-art diagnostic tools to identify and resolve issues with precision. We use only genuine parts to maintain the integrity and value of your luxury vehicle.",
+        title: "services.items.service.title",
+        description: "services.items.service.description",
         image: "/images/services1.jpg",
         link: "/services/enginegear",
     },
     {
         id: "workshop",
-        title: "WORKSHOP",
-        description: "Our world-class workshop is equipped with the latest technology to handle any automotive challenge. We maintain a pristine, organized environment that reflects the quality of work we deliver. Whether it's a minor adjustment or a major overhaul, your car is in the safest hands.",
+        title: "services.items.workshop.title",
+        description: "services.items.workshop.description",
         image: "/images/services.jpg",
         link: "/services/workshop",
     },
     {
         id: "body-shop",
-        title: "BODY SHOP",
-        description: "Restore your vehicle's showroom shine with our expert body shop services. We specialize in dent removal, scratch repair, and full-body painting using premium accident-repair techniques. Our color-matching technology ensures a flawless finish that is indistinguishable from the factory original.",
+        title: "services.items.bodyShop.title",
+        description: "services.items.bodyShop.description",
         image: "/images/download.jpg",
         link: "/services/bodyshop",
     },
     {
         id: "engineering",
-        title: "ENGINEERING AND PROGRAMMING",
-        description: "Unlock the full potential of your vehicle with our advanced engineering and programming services. We offer ECU tuning, performance upgrades, and software updates tailored to your specific driving preferences. Enhance power, efficiency, and responsiveness with our custom solutions.",
-        image: "/images/engineering.jpg",
+        title: "services.items.engineering.title",
+        description: "services.items.engineering.description",
+        image: "/images/recovery/nop 2.jfif",
         link: "/services/engineering",
     },
     {
         id: "engine-gearbox",
-        title: "ENGINE AND GEARBOX",
-        description: "The heart of your vehicle deserves the utmost care. Our engine and gearbox specialists are experts in diagnosing and repairing complex mechanical issues. From engine rebuilds to transmission servicing, we ensure smooth power delivery and reliability for the long haul.",
-        image: "/images/2.jpg",
+        title: "services.items.engineGearbox.title",
+        description: "services.items.engineGearbox.description",
+        image: "/images/recovery/nop 3.jfif",
         link: "/services/enginegear",
     },
     {
         id: "recovery",
-        title: "RECOVERY SERVICE",
-        description: "Stranded? Our premium recovery service is available 24/7 to assist you. We provide safe and professional towing for luxury vehicles, ensuring they are transported without a scratch to our workshop. Peace of mind is just a phone call away.",
-        image: "/images/recovery.jpg",
+        title: "services.items.recovery.title",
+        description: "services.items.recovery.description",
+        image: "/images/recovery/nop 1.jfif",
         link: "/services/recovery",
     },
 ];
 
 export const FEATURES = [
     {
-        title: "Red Dune German Experts",
-        description: "Certified technicians specializing in all luxury vehicles.",
+        title: "features.cards.germanExperts.title",
+        description: "features.cards.germanExperts.description",
         icon: ShieldCheck,
     },
     {
-        title: "Advanced Diagnostics",
-        description: "Latest diagnostic tools to identify issues accurately.",
+        title: "features.cards.diagnostics.title",
+        description: "features.cards.diagnostics.description",
         icon: BarChart3,
     },
     {
-        title: "Genuine Parts",
-        description: "We use only original manufacturer parts for repairs.",
+        title: "features.cards.parts.title",
+        description: "features.cards.parts.description",
         icon: Settings,
     },
     {
-        title: "Premium Experience",
-        description: "Comfortable lounge and transparent service process.",
+        title: "features.cards.experience.title",
+        description: "features.cards.experience.description",
         icon: AppWindow,
     },
 ];
@@ -227,185 +262,681 @@ export const FEATURES = [
 export const BLOG_POSTS = [
     {
         id: 1,
-        title: "Essential Maintenance Tips for Luxury Cars",
-        excerpt: "Keep your high-performance vehicle in top condition with these expert tips.",
+        title: "blog.posts.maintenance.title",
+        excerpt: "blog.posts.maintenance.excerpt",
         date: "Oct 12, 2023",
         image: "/images/blog1.jpg",
     },
     {
         id: 2,
-        title: "Understanding ECU Tuning: Benefits & Risks",
-        excerpt: "Unlock the hidden potential of your engine with professional tuning.",
+        title: "blog.posts.tuning.title",
+        excerpt: "blog.posts.tuning.excerpt",
         date: "Sep 28, 2023",
         image: "/images/blog2.jpg",
     },
     {
         id: 3,
-        title: "Ceramic Coating vs. PPF: Which is Right for You?",
-        excerpt: "A detailed comparison of paint protection solutions.",
+        title: "blog.posts.protection.title",
+        excerpt: "blog.posts.protection.excerpt",
         date: "Sep 15, 2023",
         image: "/images/blog3.jpg",
     },
 ];
 
 export const WORKSHOP_SERVICES = [
-    { id: "ws-workshop", title: "Engine Managemnt System", icon: Settings, description: "Advanced diagnostic and repair workshop.", image: "/images/engineering.jpg", href: "/services/workshop/engine-management-system" },
-    { id: "ws-bodyshop", title: "Car Comfort", icon: ShieldCheck, description: "Expert body repair and painting.", image: "/images/2.jpg", href: "/services/workshop/comfort-system" },
-    { id: "ws-programming", title: "Brake System", icon: Cpu, description: "ECU coding and software updates.", image: "/images/s2.jpg", href: "/services/workshop/brake-system" },
-    { id: "ws-engine", title: "Oil Change Service", icon: Cog, description: "Complete engine and transmission overhaul.", image: "/images/oil.jpg", href: "/services/workshop/oil-change" },
-    { id: "ws-recovery", title: "Wheel Alignment", icon: Car, description: "24/7 vehicle recovery and towing.", image: "/images/wheel.jpg", href: "/services/workshop/wheel-alignment" },
-    // { id: "ws-dashboard", title: "Dashboard Repair", icon: Gauge, description: "Instrument cluster and dashboard fixing.", image: "/images/services/dashboard.jpg" },
-    { id: "ws-headlight", title: "Stop & Go Service", icon: Zap, description: "Crystal clear headlight restoration.", image: "/images/headlight.jpg", href: "/services/workshop/stop-go" },
-    { id: "ws-roof", title: "Fuel Injection Service", icon: MoveVertical, description: "Fixing sagging or damaged roof liners.", image: "/images/fuel.jpg", href: "/services/workshop/fuel-injection" },
-    // { id: "ws-ac", title: "AC Repair", icon: Wind, description: "Complete climate control restoration.", image: "/images/services/ac.jpg" },
-    // { id: "ws-brake", title: "Brake Service", icon: Disc, description: "Pad and rotor replacement.", image: "/images/services/brake.jpg" },
-    // { id: "ws-suspension", title: "Suspension Repair", icon: Activity, description: "Shocks, struts, and arm replacement.", image: "/images/services/suspension.jpg" },
-    // { id: "ws-electrical", title: "Electrical Diagnostics", icon: Zap, description: "Solving complex electrical issues.", image: "/images/services/electrical.jpg" },
-    // { id: "ws-oil", title: "Oil Change Service", icon: Droplet, description: "Premium oil and filter change.", image: "/images/services/oil.jpg" },
-    // { id: "ws-transmission", title: "Transmission Repair", icon: GitMerge, description: "Gearbox diagnostics and repair.", image: "/images/services/transmission.jpg" },
-    // { id: "ws-inspection", title: "Car Inspection", icon: ClipboardCheck, description: "Pre-purchase and safety inspections.", image: "/images/services/inspection.jpg" },
-    // { id: "ws-tuning", title: "Performance Tuning", icon: Gauge, description: "Enhancing power and driving dynamics.", image: "/images/services/tuning.jpg" },
+    { id: "ws-workshop", title: "workshopServices.engineManagement.title", icon: Settings, description: "workshopServices.engineManagement.description", image: "/images/engineering (2).jpg", href: "/services/workshop/engine-management-system" },
+    { id: "ws-bodyshop", title: "workshopServices.carComfort.title", icon: ShieldCheck, description: "workshopServices.carComfort.description", image: "/images/how.jpg", href: "/services/workshop/comfort-system" },
+    { id: "ws-programming", title: "workshopServices.brakeSystem.title", icon: Cpu, description: "workshopServices.brakeSystem.description", image: "/images/s2.jpg", href: "/services/workshop/brake-system" },
+    { id: "ws-engine", title: "workshopServices.oilChange.title", icon: Cog, description: "workshopServices.oilChange.description", image: "/images/oil.jpg", href: "/services/workshop/oil-change" },
+    { id: "ws-recovery", title: "workshopServices.wheelAlignment.title", icon: Car, description: "workshopServices.wheelAlignment.description", image: "/images/wheel.jpg", href: "/services/workshop/wheel-alignment" },
+    { id: "ws-headlight", title: "workshopServices.stopGo.title", icon: Zap, description: "workshopServices.stopGo.description", image: "/images/headlight.jpg", href: "/services/workshop/stop-go" },
+    { id: "ws-roof", title: "workshopServices.fuelInjection.title", icon: MoveVertical, description: "workshopServices.fuelInjection.description", image: "/images/fuel.jpg", href: "/services/workshop/fuel-injection" },
 ];
 
 export const BODYSHOP_SERVICES = [
-    { id: "bs-dashboard", title: "Dashboard Leather or Replacement", icon: Armchair, description: "Premium leather wrapping and dashboard restoration.", image: "/images/dashboard cover.jpg" },
-    { id: "bs-restoration", title: "Classic Car Restoration", icon: Car, description: "Bringing vintage beauties back to life.", image: "/images/classic.jfif" },
-    { id: "bs-headlight", title: "Headlight Restoration", icon: Zap, description: "Restoring clarity and brightness to headlights.", image: "/images/headlight.jpg" },
-    { id: "bs-windscreen", title: "Windscreen Restoration", icon: AppWindow, description: "Repairing chips and cracks for clear vision.", image: "/images/windscreen.jpg" },
-    // { id: "bs-pdr", title: "Paintless Dent Repair", icon: ShieldCheck, description: "Removing dents without affecting original paint.", image: "/images/services/pdr.jpg" },
-    { id: "bs-roof", title: "Roof Lining Repair", icon: MoveVertical, description: "Fixing sagging headliners and fabrics.", image: "/images/roof lining.jpg" },
-    { id: "bs-alloy", title: "Alloy Wheel Repair", icon: CircleDot, description: "Fixing curb rash, bends, and cosmetic damage.", image: "/images/alloy.jpg" },
-    { id: "bs-upholstery", title: "Upholstery & Refurbishment", icon: Armchair, description: "Interior seat repair and material refurbishment.", image: "/images/Upholstery & Refurbishment.jpg" },
-    { id: "bs-denting", title: "Denting Painting", icon: Disc, description: "Professional dent removal and spray painting.", image: "/images/car painting.jpg" },
-    // { id: "bs-smart", title: "Smart Repair", icon: Settings2, description: "Quick fixes for minor scratches and scuffs.", image: "/images/services/smart-repair.jpg" },
-    { id: "bs-chassis", title: "Chassis Repair", icon: Settings, description: "Frame straightening and structural alignment.", image: "/images/chasses.jpg" },
-    { id: "bs-rims", title: "Rims and Caliper", icon: CircleDot, description: "Custom painting and repair for rims and calipers.", image: "/images/caliper.jpg" },
-    { id: "bs-bodykit", title: "Car Body Kit", icon: Car, description: "Installation and styling of custom body kits.", image: "/images/car body kit.jpg" },
-    // { id: "bs-polish", title: "Polish and Detailing", icon: ShieldCheck, description: "Deep cleaning, polishing, and paint protection.", image: "/images/services/detailing.jpg" },
+    {
+        id: "bs-dashboard",
+        title: "bodyshopServices.dashboard.title",
+        icon: Armchair,
+        description: "bodyshopServices.dashboard.description",
+        image: "/images/dashboard cover.jpg",
+        href: "/services/bodyshop/dashboard-leather-or-replacement",
+    },
+    {
+        id: "bs-restoration",
+        title: "bodyshopServices.classicCar.title",
+        icon: Car,
+        description: "bodyshopServices.classicCar.description",
+        image: "/images/classic.jfif",
+        href: "/services/bodyshop/classic-car-restoration",
+    },
+    {
+        id: "bs-headlight",
+        title: "bodyshopServices.headlight.title",
+        icon: Zap,
+        description: "bodyshopServices.headlight.description",
+        image: "/images/headlight.jpg",
+        href: "/services/bodyshop/headlight-restoration",
+    },
+    {
+        id: "bs-windscreen",
+        title: "bodyshopServices.windscreen.title",
+        icon: AppWindow,
+        description: "bodyshopServices.windscreen.description",
+        image: "/images/windscreen.jpg",
+        href: "/services/bodyshop/windscreen-restoration",
+    },
+    {
+        id: "bs-roof",
+        title: "bodyshopServices.roofLining.title",
+        icon: MoveVertical,
+        description: "bodyshopServices.roofLining.description",
+        image: "/images/roof lining.jpg",
+        href: "/services/bodyshop/roof-lining-repair",
+    },
+    {
+        id: "bs-alloy",
+        title: "bodyshopServices.alloyWheel.title",
+        icon: CircleDot,
+        description: "bodyshopServices.alloyWheel.description",
+        image: "/images/alloy.jpg",
+        href: "/services/bodyshop/alloy-wheel-repair",
+    },
+    {
+        id: "bs-upholstery",
+        title: "bodyshopServices.upholstery.title",
+        icon: Armchair,
+        description: "bodyshopServices.upholstery.description",
+        image: "/images/Upholstery & Refurbishment.jpg",
+        href: "/services/bodyshop/upholstery-and-refurbishment",
+    },
+    {
+        id: "bs-denting",
+        title: "bodyshopServices.dent.title",
+        icon: Disc,
+        description: "bodyshopServices.dent.description",
+        image: "/images/car painting.jpg",
+        href: "/services/bodyshop/denting-painting",
+    },
+    {
+        id: "bs-chassis",
+        title: "bodyshopServices.chassis.title",
+        icon: Settings,
+        description: "bodyshopServices.chassis.description",
+        image: "/images/chasses.jpg",
+        href: "/services/bodyshop/chassis-repair",
+    },
+    {
+        id: "bs-rims",
+        title: "bodyshopServices.rims.title",
+        icon: CircleDot,
+        description: "bodyshopServices.rims.description",
+        image: "/images/caliper.jpg",
+        href: "/services/bodyshop/rims-and-caliper",
+    },
+    {
+        id: "bs-bodykit",
+        title: "bodyshopServices.bodykit.title",
+        icon: Car,
+        description: "bodyshopServices.bodykit.description",
+        image: "/images/car body kit.jpg",
+        href: "/services/bodyshop/car-body-kit",
+    },
+];
+
+export const BODYSHOP_PAGE_DATA = [
+    {
+        id: "dashboard-leather-or-replacement",
+        title: "bodyshopData.dashboard.title",
+        sections: [
+            {
+                heading: "bodyshopData.dashboard.s1.heading",
+                description: "bodyshopData.dashboard.s1.description",
+                image: "/images/dashboard cover.jpg",
+            },
+            {
+                heading: "bodyshopData.dashboard.s2.heading",
+                description: "bodyshopData.dashboard.s2.description",
+                image: "/images/dashboard/dash1.jpg",
+                list: [
+                    "bodyshopData.dashboard.s2.items.0",
+                    "bodyshopData.dashboard.s2.items.1",
+                    "bodyshopData.dashboard.s2.items.2",
+                    "bodyshopData.dashboard.s2.items.3",
+                    "bodyshopData.dashboard.s2.items.4",
+                ],
+            },
+            {
+                heading: "bodyshopData.dashboard.s3.heading",
+                description: "bodyshopData.dashboard.s3.description",
+                image: "/images/dashboard/dash2.jpg",
+                cta: "bodyshopData.dashboard.s3.cta",
+            },
+        ],
+    },
+    {
+        id: "classic-car-restoration",
+        title: "bodyshopData.classicCar.title",
+        sections: [
+            {
+                heading: "bodyshopData.classicCar.s1.heading",
+                description: "bodyshopData.classicCar.s1.description",
+                image: "/images/classic.jfif",
+            },
+            {
+                heading: "bodyshopData.classicCar.s2.heading",
+                description: "bodyshopData.classicCar.s2.description",
+                image: "/images/chasses.jpg",
+                list: [
+                    "bodyshopData.classicCar.s2.items.0",
+                    "bodyshopData.classicCar.s2.items.1",
+                    "bodyshopData.classicCar.s2.items.2",
+                    "bodyshopData.classicCar.s2.items.3",
+                    "bodyshopData.classicCar.s2.items.4",
+                ],
+            },
+            {
+                heading: "bodyshopData.classicCar.s3.heading",
+                description: "bodyshopData.classicCar.s3.description",
+                image: "/images/restoration/res1.jpg",
+                cta: "bodyshopData.classicCar.s3.cta",
+            },
+        ],
+    },
+    {
+        id: "headlight-restoration",
+        title: "bodyshopData.headlight.title",
+        sections: [
+            {
+                heading: "bodyshopData.headlight.s1.heading",
+                description: "bodyshopData.headlight.s1.description",
+                image: "/images/headlight.jpg",
+            },
+            {
+                heading: "bodyshopData.headlight.s2.heading",
+                description: "bodyshopData.headlight.s2.description",
+                image: "/images/restoration/head1.jpg",
+                list: [
+                    "bodyshopData.headlight.s2.items.0",
+                    "bodyshopData.headlight.s2.items.1",
+                    "bodyshopData.headlight.s2.items.2",
+                    "bodyshopData.headlight.s2.items.3",
+                    "bodyshopData.headlight.s2.items.4",
+                ],
+            },
+            {
+                heading: "bodyshopData.headlight.s3.heading",
+                description: "bodyshopData.headlight.s3.description",
+                image: "/images/restoration/head2.jpg",
+                cta: "bodyshopData.headlight.s3.cta",
+            },
+        ],
+    },
+    {
+        id: "windscreen-restoration",
+        title: "bodyshopData.windscreen.title",
+        sections: [
+            {
+                heading: "bodyshopData.windscreen.s1.heading",
+                description: "bodyshopData.windscreen.s1.description",
+                image: "/images/windscreen.jpg",
+            },
+            {
+                heading: "bodyshopData.windscreen.s2.heading",
+                description: "bodyshopData.windscreen.s2.description",
+                image: "/images/wind/wind (1).jpg",
+                list: [
+                    "bodyshopData.windscreen.s2.items.0",
+                    "bodyshopData.windscreen.s2.items.1",
+                    "bodyshopData.windscreen.s2.items.2",
+                    "bodyshopData.windscreen.s2.items.3",
+                    "bodyshopData.windscreen.s2.items.4",
+                ],
+            },
+            {
+                heading: "bodyshopData.windscreen.s3.heading",
+                description: "bodyshopData.windscreen.s3.description",
+                image: "/images/wind/wind (2).jpg",
+                cta: "bodyshopData.windscreen.s3.cta",
+            },
+        ],
+    },
+    {
+        id: "roof-lining-repair",
+        title: "bodyshopData.roofLining.title",
+        sections: [
+            {
+                heading: "bodyshopData.roofLining.s1.heading",
+                description: "bodyshopData.roofLining.s1.description",
+                image: "/images/roof lining.jpg",
+            },
+            {
+                heading: "bodyshopData.roofLining.s2.heading",
+                description: "bodyshopData.roofLining.s2.description",
+                image: "/images/wind/roof (1).jpg",
+                list: [
+                    "bodyshopData.roofLining.s2.items.0",
+                    "bodyshopData.roofLining.s2.items.1",
+                    "bodyshopData.roofLining.s2.items.2",
+                    "bodyshopData.roofLining.s2.items.3",
+                    "bodyshopData.roofLining.s2.items.4",
+                ],
+            },
+            {
+                heading: "bodyshopData.roofLining.s3.heading",
+                description: "bodyshopData.roofLining.s3.description",
+                image: "/images/wind/roof (2).jpg",
+                cta: "bodyshopData.roofLining.s3.cta",
+            },
+        ],
+    },
+    {
+        id: "alloy-wheel-repair",
+        title: "bodyshopData.alloyWheel.title",
+        sections: [
+            {
+                heading: "bodyshopData.alloyWheel.s1.heading",
+                description: "bodyshopData.alloyWheel.s1.description",
+                image: "/images/alloy.jpg",
+            },
+            {
+                heading: "bodyshopData.alloyWheel.s2.heading",
+                description: "bodyshopData.alloyWheel.s2.description",
+                image: "/images/wheel.jpg",
+                list: [
+                    "bodyshopData.alloyWheel.s2.items.0",
+                    "bodyshopData.alloyWheel.s2.items.1",
+                    "bodyshopData.alloyWheel.s2.items.2",
+                    "bodyshopData.alloyWheel.s2.items.3",
+                    "bodyshopData.alloyWheel.s2.items.4",
+                ],
+            },
+            {
+                heading: "bodyshopData.alloyWheel.s3.heading",
+                description: "bodyshopData.alloyWheel.s3.description",
+                image: "/images/caliper.jpg",
+                cta: "bodyshopData.alloyWheel.s3.cta",
+            },
+        ],
+    },
+    {
+        id: "upholstery-and-refurbishment",
+        title: "bodyshopData.upholstery.title",
+        sections: [
+            {
+                heading: "bodyshopData.upholstery.s1.heading",
+                description: "bodyshopData.upholstery.s1.description",
+                image: "/images/Upholstery & Refurbishment.jpg",
+            },
+            {
+                heading: "bodyshopData.upholstery.s2.heading",
+                description: "bodyshopData.upholstery.s2.description",
+                image: "/images/wind/int (1).jpg",
+                list: [
+                    "bodyshopData.upholstery.s2.items.0",
+                    "bodyshopData.upholstery.s2.items.1",
+                    "bodyshopData.upholstery.s2.items.2",
+                    "bodyshopData.upholstery.s2.items.3",
+                    "bodyshopData.upholstery.s2.items.4",
+                ],
+            },
+            {
+                heading: "bodyshopData.upholstery.s3.heading",
+                description: "bodyshopData.upholstery.s3.description",
+                image: "/images/services.jpg",
+                cta: "bodyshopData.upholstery.s3.cta",
+            },
+        ],
+    },
+    {
+        id: "denting-painting",
+        title: "bodyshopData.dent.title",
+        sections: [
+            {
+                heading: "bodyshopData.dent.s1.heading",
+                description: "bodyshopData.dent.s1.description",
+                image: "/images/car painting.jpg",
+            },
+            {
+                heading: "bodyshopData.dent.s2.heading",
+                description: "bodyshopData.dent.s2.description",
+                image: "/images/wind/dent (2).jpg",
+                list: [
+                    "bodyshopData.dent.s2.items.0",
+                    "bodyshopData.dent.s2.items.1",
+                    "bodyshopData.dent.s2.items.2",
+                    "bodyshopData.dent.s2.items.3",
+                    "bodyshopData.dent.s2.items.4",
+                ],
+            },
+            {
+                heading: "bodyshopData.dent.s3.heading",
+                description: "bodyshopData.dent.s3.description",
+                image: "/images/wind/dent (1).jpg",
+                cta: "bodyshopData.dent.s3.cta",
+            },
+        ],
+    },
+    {
+        id: "chassis-repair",
+        title: "bodyshopData.chassis.title",
+        sections: [
+            {
+                heading: "bodyshopData.chassis.s1.heading",
+                description: "bodyshopData.chassis.s1.description",
+                image: "/images/chasses.jpg",
+            },
+            {
+                heading: "bodyshopData.chassis.s2.heading",
+                description: "bodyshopData.chassis.s2.description",
+                image: "/images/wind/chass (1).jpg",
+                list: [
+                    "bodyshopData.chassis.s2.items.0",
+                    "bodyshopData.chassis.s2.items.1",
+                    "bodyshopData.chassis.s2.items.2",
+                    "bodyshopData.chassis.s2.items.3",
+                    "bodyshopData.chassis.s2.items.4",
+                ],
+            },
+            {
+                heading: "bodyshopData.chassis.s3.heading",
+                description: "bodyshopData.chassis.s3.description",
+                image: "/images/wind/chass (3).jpg",
+                cta: "bodyshopData.chassis.s3.cta",
+            },
+        ],
+    },
+    {
+        id: "rims-and-caliper",
+        title: "bodyshopData.rims.title",
+        sections: [
+            {
+                heading: "bodyshopData.rims.s1.heading",
+                description: "bodyshopData.rims.s1.description",
+                image: "/images/caliper.jpg",
+            },
+            {
+                heading: "bodyshopData.rims.s2.heading",
+                description: "bodyshopData.rims.s2.description",
+                image: "/images/wind/rim (2).jpg",
+                list: [
+                    "bodyshopData.rims.s2.items.0",
+                    "bodyshopData.rims.s2.items.1",
+                    "bodyshopData.rims.s2.items.2",
+                    "bodyshopData.rims.s2.items.3",
+                    "bodyshopData.rims.s2.items.4",
+                ],
+            },
+            {
+                heading: "bodyshopData.rims.s3.heading",
+                description: "bodyshopData.rims.s3.description",
+                image: "/images/wind/rim (1).jpg",
+                cta: "bodyshopData.rims.s3.cta",
+            },
+        ],
+    },
+    {
+        id: "car-body-kit",
+        title: "bodyshopData.bodykit.title",
+        sections: [
+            {
+                heading: "bodyshopData.bodykit.s1.heading",
+                description: "bodyshopData.bodykit.s1.description",
+                image: "/images/car body kit.jpg",
+            },
+            {
+                heading: "bodyshopData.bodykit.s2.heading",
+                description: "bodyshopData.bodykit.s2.description",
+                image: "/images/wind/1.jpg",
+                list: [
+                    "bodyshopData.bodykit.s2.items.0",
+                    "bodyshopData.bodykit.s2.items.1",
+                    "bodyshopData.bodykit.s2.items.2",
+                    "bodyshopData.bodykit.s2.items.3",
+                    "bodyshopData.bodykit.s2.items.4",
+                ],
+            },
+            {
+                heading: "bodyshopData.bodykit.s3.heading",
+                description: "bodyshopData.bodykit.s3.description",
+                image: "/images/wind/2.jpg",
+                cta: "bodyshopData.bodykit.s3.cta",
+            },
+        ],
+    },
 ];
 
 export const ENGINEERING_SERVICES = [
-    { id: "eng-retrofit", title: "Retrofit", icon: Settings, description: "Upgrading older vehicles with modern features.", image: "/images/retrofit.jfif", href: "/services/engineering/retrofit" },
-    { id: "eng-radar", title: "Radar Calibration", icon: CircleDot, description: "Precision calibration for safety systems.", image: "/images/radar.jfif", href: "/services/engineering/radar" },
-    { id: "eng-nav", title: "Navigation Update", icon: AppWindow, description: "Latest maps and software for your GPS.", image: "/images/navigation.jfif", href: "/services/engineering/navigation" },
-    { id: "eng-programming", title: "Programming", icon: Cpu, description: "Software programming and module coding.", image: "/images/programming.jfif", href: "/services/engineering/programming" },
+    { id: "eng-retrofit", title: "engineeringServices.retrofit.title", icon: Settings, description: "engineeringServices.retrofit.description", image: "/images/retrofit.jfif", href: "/services/engineering/retrofit" },
+    { id: "eng-radar", title: "engineeringServices.radar.title", icon: CircleDot, description: "engineeringServices.radar.description", image: "/images/radar.jfif", href: "/services/engineering/radar" },
+    { id: "eng-nav", title: "engineeringServices.navigation.title", icon: AppWindow, description: "engineeringServices.navigation.description", image: "/images/navigation.jfif", href: "/services/engineering/navigation" },
+    { id: "eng-programming", title: "engineeringServices.programming.title", icon: Cpu, description: "engineeringServices.programming.description", image: "/images/programming.jfif", href: "/services/engineering/programming" },
 ];
 
 export const ENGINEERING_PAGE_DATA = [
     {
         id: "radar",
-        title: "Radar Calibration",
+        title: "engineeringData.radar.title",
         sections: [
             {
-                heading: "ADAS & Radar Calibration",
-                description: "Advanced Driver Assistance Systems (ADAS) like adaptive cruise control, lane departure warning, and emergency braking rely on precise radar sensors. Even a slight misalignment due to a minor bump or windshield replacement can compromise your safety. At Red Dune, we use manufacturer-approved calibration equipment to ensure every sensor is perfectly aligned to factory specifications.",
+                heading: "engineeringData.radar.s1.heading",
+                description: "engineeringData.radar.s1.description",
                 image: "/images/radar.jfif",
             },
             {
-                heading: "How Often Should You Calibrate?",
-                description: "Regular calibration is essential for maintaining the integrity of your car's safety systems. We recommend a check-up if you experience any of the following:",
-                image: "/images/services.jpg",
+                heading: "engineeringData.radar.s2.heading",
+                description: "engineeringData.radar.s2.description",
+                image: "/images/engi/rad2.jpg",
                 list: [
-                    "After a front-end collision or minor bumper impact",
-                    "Following a windshield replacement (for camera-based systems)",
-                    "If you notice warnings on your dashboard related to ADAS",
-                    "After suspension repairs or wheel alignment changes",
-                    "If the adaptive cruise control feels inconsistent"
+                    "engineeringData.radar.s2.items.0",
+                    "engineeringData.radar.s2.items.1",
+                    "engineeringData.radar.s2.items.2",
+                    "engineeringData.radar.s2.items.3",
+                    "engineeringData.radar.s2.items.4"
                 ]
             },
             {
-                heading: "Why Choose Red Dune for Radar Calibration?",
-                description: "Our team is equipped with the latest diagnostic and calibration tools specifically designed for All luxury brands. We don't just clear error codes; we perform physical and software-based alignment to ensure 100% accuracy.",
-                image: "/images/engineering.jpg",
-                cta: "Reach us now"
+                heading: "engineeringData.radar.s3.heading",
+                description: "engineeringData.radar.s3.description",
+                image: "/images/engi/rad1.jpg",
+                cta: "engineeringData.radar.s3.cta"
             }
         ]
     },
     {
         id: "programming",
-        title: "Software Programming & Coding",
+        title: "engineeringData.programming.title",
         sections: [
             {
-                heading: "Advanced ECU Programming",
-                description: "Modern luxury vehicles are essentially computers on wheels. Every component, from the headlights to the transmission, is controlled by specialized software. Our programming services ensure that your vehicle's modules are running the latest software versions for optimal performance, fuel efficiency, and feature availability.",
+                heading: "engineeringData.programming.s1.heading",
+                description: "engineeringData.programming.s1.description",
                 image: "/images/programming.jfif",
             },
             {
-                heading: "Module Coding & Customization",
-                description: "Replacing a module in a German car often requires specialized coding to match it with the vehicle's VIN and other systems. We provide expert coding services for:",
-                image: "/images/s2.jpg",
+                heading: "engineeringData.programming.s2.heading",
+                description: "engineeringData.programming.s2.description",
+                image: "/images/engi/pro1.jpg",
                 list: [
-                    "New engine and transmission control modules",
-                    "Comfort systems and lighting control coding",
-                    "Enabling hidden factory features (where possible)",
-                    "Language conversions and infotainment updates",
-                    "Software error resolution and flashing"
+                    "engineeringData.programming.s2.items.0",
+                    "engineeringData.programming.s2.items.1",
+                    "engineeringData.programming.s2.items.2",
+                    "engineeringData.programming.s2.items.3",
+                    "engineeringData.programming.s2.items.4"
                 ]
             },
             {
-                heading: "Expert Diagnostic Solutions",
-                description: "Using OEM-level diagnostic software, we can identify and fix complex software glitches that generic scanners miss. Your car's digital health is our priority.",
-                image: "/images/engineering.jpg",
-                cta: "Reach us now"
+                heading: "engineeringData.programming.s3.heading",
+                description: "engineeringData.programming.s3.description",
+                image: "/images/engi/pro2.jpg",
+                cta: "engineeringData.programming.s3.cta"
             }
         ]
     },
     {
         id: "retrofit",
-        title: "Vehicle Retrofitting",
+        title: "engineeringData.retrofit.title",
         sections: [
             {
-                heading: "Modernize Your Luxury Vehicle",
-                description: "Wish your older model had the latest tech? Our retrofitting services allow you to upgrade your vehicle with modern features that were either optional or not available when it was built. We use genuine components and factory-style wiring to ensure a seamless integration.",
+                heading: "engineeringData.retrofit.s1.heading",
+                description: "engineeringData.retrofit.s1.description",
                 image: "/images/retrofit.jfif",
             },
             {
-                heading: "Popular Retrofit Options",
-                description: "Enhance your driving experience with high-quality upgrades tailored to your specific model:",
-                image: "/images/2.jpg",
+                heading: "engineeringData.retrofit.s2.heading",
+                description: "engineeringData.retrofit.s2.description",
+                image: "/images/engi/re0.jpg",
                 list: [
-                    "Apple CarPlay & Android Auto integration",
-                    "Original ambient lighting systems",
-                    "Surround-view and reverse camera installations",
-                    "Digital instrument cluster (Virtual Cockpit) upgrades",
-                    "Soft-close door systems and power tailgates"
+                    "engineeringData.retrofit.s2.items.0",
+                    "engineeringData.retrofit.s2.items.1",
+                    "engineeringData.retrofit.s2.items.2",
+                    "engineeringData.retrofit.s2.items.3",
+                    "engineeringData.retrofit.s2.items.4"
                 ]
             },
             {
-                heading: "Factory Finish & Integration",
-                description: "We take pride in our 'OEM Plus' approach. Every retrofit is performed with the same care and precision as if it were installed on the production line, maintaining your car's premium feel.",
+                heading: "engineeringData.retrofit.s3.heading",
+                description: "engineeringData.retrofit.s3.description",
                 image: "/images/classic.jfif",
-                cta: "Reach us now"
+                cta: "engineeringData.retrofit.s3.cta"
             }
         ]
     },
     {
         id: "navigation",
-        title: "Navigation & Infotainment Updates",
+        title: "engineeringData.navigation.title",
         sections: [
             {
-                heading: "Latest Map & Software Updates",
-                description: "Don't let outdated maps lead you astray. We provide the latest GPS database updates for all major all luxury car brands, ensuring you have the most accurate routes, points of interest, and speed limit information available for the UAE and GCC region.",
+                heading: "engineeringData.navigation.s1.heading",
+                description: "engineeringData.navigation.s1.description",
                 image: "/images/navigation.jfif",
             },
             {
-                heading: "Enhanced Infotainment Experience",
-                description: "Beyond maps, navigation updates often include improvements to the overall system performance, Bluetooth connectivity, and media compatibility. Our updates cover:",
-                image: "/images/s2.jpg",
+                heading: "engineeringData.navigation.s2.heading",
+                description: "engineeringData.navigation.s2.description",
+                image: "/images/engi/nav1.jpg",
                 list: [
-                    "Official GCC map database updates",
-                    "Infotainment system firmware flashing",
-                    "Solving GPS signal and positioning issues",
-                    "Adding New POIs (Points of Interest)",
-                    "System responsiveness optimizations"
+                    "engineeringData.navigation.s2.items.0",
+                    "engineeringData.navigation.s2.items.1",
+                    "engineeringData.navigation.s2.items.2",
+                    "engineeringData.navigation.s2.items.3",
+                    "engineeringData.navigation.s2.items.4"
                 ]
             },
             {
-                heading: "Stay Connected & On Track",
-                description: "A modern, updated navigation system is more than just a map; it's a co-pilot that ensures your journey is smooth and efficient. Let us handle the technical side so you can enjoy the drive.",
-                image: "/images/engineering.jpg",
-                cta: "Reach us now"
+                heading: "engineeringData.navigation.s3.heading",
+                description: "engineeringData.navigation.s3.description",
+                image: "/images/engi/nav2.jpg",
+                cta: "engineeringData.navigation.s3.cta"
             }
         ]
     }
 ];
+
+export const SPARE_PARTS_DATA = {
+    hero: {
+        title1: "spareParts.hero.title1",
+        title2: "spareParts.hero.title2",
+        description: "spareParts.hero.description",
+        image: "/images/spare/part4.jpeg",
+        cta: "spareParts.hero.inquireNow",
+    },
+    about: {
+        title1: "spareParts.about.title1",
+        title2: "spareParts.about.title2",
+        description: "spareParts.about.description",
+        image: "/images/spare/part5.jpg",
+        itemsKey: "spareParts.about.items",
+        cta: "spareParts.about.talkToExpert",
+    },
+    warranty: {
+        title1: "spareParts.warranty.title1",
+        title2: "spareParts.warranty.title2",
+        items: [
+            { key: "certified", icon: ShieldCheck },
+            { key: "battery", icon: Battery },
+            { key: "leak", icon: Zap },
+            { key: "fast", icon: Clock },
+            { key: "longTerm", icon: RotateCcw },
+            { key: "dealer", icon: Settings },
+        ],
+    },
+    solutions: {
+        title1: "spareParts.solutions.title1",
+        title2: "spareParts.solutions.title2",
+        items: [
+            { key: "mechanical", imageLabel: "Engine Components", image: "/images/spare/part5.jpg" },
+            { key: "electrical", imageLabel: "Electrical Wiring" },
+            { key: "battery", imageLabel: "Battery Replacement" },
+            { key: "restoration", imageLabel: "Engine Repair" },
+        ],
+        cta: "spareParts.solutions.bookService",
+    },
+    process: {
+        title1: "spareParts.process.title1",
+        title2: "spareParts.process.title2",
+        itemsKey: "spareParts.process.steps",
+    },
+    whyChoose: {
+        title1: "spareParts.whyRedDune.title1",
+        title2: "spareParts.whyRedDune.title2",
+        imageLabel: "Workshop Section Area",
+        items: ["specialists", "equipment", "inventory", "facility"],
+    },
+    specialization: {
+        title: "spareParts.weSpecialize",
+        brands: [
+            "audi", "bmw", "mercedes", "porsche", "ferrari", "bentley",
+            "rangeRover", "rollsRoyce", "lamborghini", "jaguar", "mclaren", "volkswagen"
+        ]
+    },
+    faq: {
+        title1: "spareParts.faq.title1",
+        title2: "spareParts.faq.title2",
+        itemsKey: "spareParts.faq.items",
+    }
+};
+
+export const WORKSHOP_PAGE_CONFIG = {
+    hero: {
+        title: "workshop.hero.title",
+        description: "workshop.hero.description",
+        image: "/images/services.jpg",
+    }
+};
+
+export const ENGINE_GEARBOX_DATA = {
+    hero: {
+        subtitle: "services.items.engineGearbox.hero.subtitle",
+        title: "services.items.engineGearbox.hero.title",
+        description: "services.items.engineGearbox.hero.description",
+        image: "/images/engi/gear (3).jpg",
+        cta: "services.items.engineGearbox.hero.cta",
+    },
+    overhaulDubai: {
+        subtitle: "services.items.engineGearbox.overhaulDubai.subtitle",
+        title: "services.items.engineGearbox.overhaulDubai.title",
+        description: "services.items.engineGearbox.overhaulDubai.description",
+        image: "/images/engi/gear (1).jpg",
+        cta: "services.items.engineGearbox.overhaulDubai.cta",
+    },
+    whyChooseUs: {
+        title: "services.items.engineGearbox.whyChooseUs.title",
+        description: "services.items.engineGearbox.whyChooseUs.description",
+        image: "/images/transmission.jpg",
+        cta: "services.items.engineGearbox.whyChooseUs.cta",
+    },
+    whenToGet: {
+        title: "services.items.engineGearbox.whenToGet.title",
+        description: "services.items.engineGearbox.whenToGet.description",
+        signsKey: "services.items.engineGearbox.whenToGet.signs",
+        signsFooter: "services.items.engineGearbox.whenToGet.signsFooter",
+        image: "/images/engi/gear (2).jpg",
+        cta: "services.items.engineGearbox.whenToGet.cta",
+    },
+    atRedDune: {
+        title: "services.items.engineGearbox.atRedDune.title",
+        description: "services.items.engineGearbox.atRedDune.description",
+        image: "/images/services.jpg",
+        cta: "services.items.engineGearbox.atRedDune.cta",
+    }
+};

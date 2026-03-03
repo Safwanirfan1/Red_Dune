@@ -2,9 +2,7 @@
 
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { Button } from "@/components/ui/Button";
-import { Input } from "@/components/ui/Input";
 import {
   ScanEye,
   FileText,
@@ -13,9 +11,9 @@ import {
   ShieldCheck,
   BarChart3,
   Gauge,
-  UploadCloud,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 import { Contact } from "@/components/sections/Contact";
@@ -36,7 +34,7 @@ export default function InspectionsPage() {
 
   return (
     <main
-      className="min-h-screen bg-background text-white font-[family-name:var(--font-inter)] overflow-x-hidden selection:bg-primary selection:text-white"
+      className="min-h-screen bg-background text-black font-[family-name:var(--font-inter)] overflow-x-hidden selection:bg-primary selection:text-black"
       dir={direction}
     >
       <Header />
@@ -44,9 +42,12 @@ export default function InspectionsPage() {
       {/* 1️⃣ Hero & Lead-In */}
       <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <PlaceholderImage
-            label="360 Inspections Hero"
-            className="opacity-30 mix-blend-overlay"
+          <Image
+            src="/images/360/ins1.jpeg"
+            alt="Hero Background"
+            fill
+            className="opacity-30 mix-blend-overlay object-cover"
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-background" />
         </div>
@@ -57,7 +58,7 @@ export default function InspectionsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-[family-name:var(--font-playfair)] font-bold text-white mb-6 drop-shadow-lg tracking-tight">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-[family-name:var(--font-playfair)] font-bold text-black mb-6 drop-shadow-lg tracking-tight">
               {t("inspections.hero.title1")}{" "}
               <span className="text-primary">
                 {t("inspections.hero.title2")}
@@ -67,8 +68,8 @@ export default function InspectionsPage() {
               {t("inspections.hero.description")}
             </p>
             <div className="flex justify-center">
-              <Link href="#booking">
-                <Button className="bg-primary text-white hover:bg-red-700 text-xl px-10 py-6 rounded-none font-bold tracking-widest transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(209,50,50,0.4)]">
+              <Link href="/contact">
+                <Button className="bg-primary text-black hover:bg-red-700 text-xl px-10 py-6 rounded-none font-bold tracking-widest transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(209,50,50,0.4)]">
                   {t("inspections.hero.bookNow")}
                 </Button>
               </Link>
@@ -82,12 +83,11 @@ export default function InspectionsPage() {
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2 space-y-8">
-              <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold mb-4 text-white leading-tight">
+              <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold mb-4 text-black leading-tight">
                 {t("inspections.prePurchase.title1")}{" "}
                 <span className="text-primary">
                   {t("inspections.prePurchase.title2")}
-                </span>{" "}
-                {t("inspections.prePurchase.title3")}
+                </span>
               </h2>
               <div className="w-24 h-1 bg-primary" />
               <p className="text-gray-400 text-lg leading-relaxed text-justify">
@@ -96,21 +96,25 @@ export default function InspectionsPage() {
             </div>
             <div className="lg:w-1/2 h-[400px] w-full relative group">
               <div className="absolute inset-0 transform translate-x-4 translate-y-4 border border-primary/30 transition-transform group-hover:translate-x-2 group-hover:translate-y-2" />
-              <PlaceholderImage
-                label="Detailed Inspection Process"
-                className="relative z-10 border-primary/10 bg-neutral-900/50"
-              />
+              <div className="relative z-10 w-full h-full">
+                <Image
+                  src="/images/360/ins2.jpeg"
+                  alt="Detailed Inspection Process"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* 3️⃣ Why Pick Us? */}
-      <section className="py-24 bg-neutral-900/30 relative border-y border-white/5">
+      <section className="py-24 relative border-y border-white/5">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
             <div className="lg:w-1/2 space-y-8">
-              <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold mb-4 text-white">
+              <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold mb-4 text-black">
                 {t("inspections.whyPickUs.title1")}{" "}
                 <span className="text-primary">
                   {t("inspections.whyPickUs.title2")}
@@ -123,10 +127,14 @@ export default function InspectionsPage() {
             </div>
             <div className="lg:w-1/2 h-[400px] w-full relative group">
               <div className="absolute inset-0 transform -translate-x-4 translate-y-4 border border-primary/30 transition-transform group-hover:-translate-x-2 group-hover:translate-y-2" />
-              <PlaceholderImage
-                label="Expert Team & High-Tech Tools"
-                className="relative z-10 border-primary/10 bg-neutral-900/50"
-              />
+              <div className="relative z-10 w-full h-full">
+                <Image
+                  src="/images/360/ins3.jpeg"
+                  alt="Expert Team & High-Tech Tools"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -137,7 +145,7 @@ export default function InspectionsPage() {
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold text-black mb-4">
               {t("inspections.highlights.title1")}{" "}
               <span className="text-primary">
                 {t("inspections.highlights.title2")}
@@ -151,10 +159,10 @@ export default function InspectionsPage() {
                 key={idx}
                 className="bg-neutral-950 p-8 border border-white/5 hover:border-primary/50 transition-all duration-300 group hover:-translate-y-1"
               >
-                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-black transition-colors">
                   <item.icon size={28} />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-white font-[family-name:var(--font-playfair)]">
+                <h3 className="text-xl font-bold mb-3 text-black font-[family-name:var(--font-playfair)]">
                   {t(`inspections.highlights.items.${item.key}.title`)}
                 </h3>
                 <p className="text-gray-500 group-hover:text-gray-400 transition-colors">
@@ -167,11 +175,11 @@ export default function InspectionsPage() {
       </section>
 
       {/* 5️⃣ How Do We Inspect? */}
-      <section className="py-24 bg-neutral-900/30 px-6 border-y border-white/5">
+      <section className="py-24  px-6 border-y border-white/5">
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2 space-y-8">
-              <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold mb-4 text-white">
+              <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold mb-4 text-black">
                 {t("inspections.howInspect.title1")}{" "}
                 <span className="text-primary">
                   {t("inspections.howInspect.title2")}
@@ -184,10 +192,14 @@ export default function InspectionsPage() {
             </div>
             <div className="lg:w-1/2 h-[400px] w-full relative group">
               <div className="absolute inset-0 transform translate-x-4 translate-y-4 border border-primary/30 transition-transform group-hover:translate-x-2 group-hover:translate-y-2" />
-              <PlaceholderImage
-                label="Inspection Workflow"
-                className="relative z-10 border-primary/10 bg-neutral-900/50"
-              />
+              <div className="relative z-10 w-full h-full">
+                <Image
+                  src="/images/360/ins4.png"
+                  alt="Inspection Workflow"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -198,7 +210,7 @@ export default function InspectionsPage() {
         <div className="container mx-auto">
           <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
             <div className="lg:w-1/2 space-y-8">
-              <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold mb-4 text-white">
+              <h2 className="text-3xl md:text-5xl font-[family-name:var(--font-playfair)] font-bold mb-4 text-black">
                 {t("inspections.buyBest.title1")}{" "}
                 <span className="text-primary">
                   {t("inspections.buyBest.title2")}
@@ -211,60 +223,19 @@ export default function InspectionsPage() {
             </div>
             <div className="lg:w-1/2 h-[400px] w-full relative group">
               <div className="absolute inset-0 transform -translate-x-4 translate-y-4 border border-primary/30 transition-transform group-hover:-translate-x-2 group-hover:translate-y-2" />
-              <PlaceholderImage
-                label="Best Car Assurance"
-                className="relative z-10 border-primary/10 bg-neutral-900/50"
-              />
+              <div className="relative z-10 w-full h-full">
+                <Image
+                  src="/images/360/vir360-img-3.png"
+                  alt="Best Car Assurance"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* 8️⃣ Brands We Serve */}
-      <section className="py-24 bg-background border-t border-white/5">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-primary uppercase tracking-widest font-bold mb-10 text-sm">
-            {t("inspections.brandsWeServe")}
-          </p>
-          <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-9 gap-4">
-            {[
-              "Audi",
-              "BMW",
-              "Mercedes",
-              "Bentley",
-              "Ferrari",
-              "Jaguar",
-              "Lamborghini",
-              "Maserati",
-              "Maybach",
-              "McLaren",
-              "Porsche",
-              "Range Rover",
-              "Rolls Royce",
-              "Smart",
-              "VW",
-              "Alfa Romeo",
-              "Aston Martin",
-              "More...",
-            ].map((brand, idx) => (
-              <div
-                key={idx}
-                className="h-20 bg-neutral-950 border border-white/10 flex items-center justify-center hover:border-primary/50 transition-all group"
-              >
-                <span className="text-xs md:text-sm text-gray-600 font-bold group-hover:text-primary transition-colors uppercase tracking-wider">
-                  {brand}
-                </span>
-              </div>
-            ))}
-          </div>
-          <p className="text-gray-600 text-xs mt-8">
-            {t("inspections.brandsDisclaimer")}
-          </p>
-        </div>
-      </section>
-      <div className="md:mx-[5%]">
-        <Contact />
-      </div>
+      <Contact />
       <Footer />
     </main>
   );

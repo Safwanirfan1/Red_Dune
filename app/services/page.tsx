@@ -3,8 +3,6 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ServiceList } from "@/components/sections/ServiceList";
-import { Button } from "@/components/ui/Button";
-import Link from "next/link";
 import { useLanguage } from "@/components/providers/LanguageProvider";
 
 export default function ServicesPage() {
@@ -13,7 +11,6 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-background">
       <Header />
-
       {/* Services Hero */}
       <section className="relative h-[60vh] min-h-[500px] w-full flex items-center justify-center overflow-hidden ">
         <div className="absolute inset-0 bg-neutral-900 z-0 ">
@@ -46,9 +43,8 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-
       <ServiceList />
- v
+      v
       <Footer />
     </main>
   );
