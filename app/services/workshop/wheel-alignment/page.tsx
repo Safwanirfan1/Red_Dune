@@ -55,7 +55,7 @@ export default function WheelAlignmentPage() {
               data-aos-duration="900"
             >
               <Image
-                src="/images/wheel/wheel1.jfif.jpeg"
+                src="/images/wheel1.jfif.jpeg"
                 alt="Computerized Wheel Alignment Machine"
                 fill
                 className="object-cover"
@@ -133,7 +133,7 @@ export default function WheelAlignmentPage() {
               data-aos-duration="800"
             >
               <Image
-                src="/images/wheel/wheel2.jfif.jpeg"
+                src="/images/wheel2.jfif.jpeg"
                 alt="Wheel Alignment Service"
                 fill
                 className="object-cover"
@@ -195,7 +195,7 @@ export default function WheelAlignmentPage() {
               data-aos-duration="800"
             >
               <Image
-                src="/images/wheel/wheel3.jfif.jpeg"
+                src="/images/wheel3.jfif.jpeg"
                 alt="Alignment Frequency"
                 fill
                 className="object-cover"

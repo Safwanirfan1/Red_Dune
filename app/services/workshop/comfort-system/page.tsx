@@ -55,7 +55,7 @@ export default function ComfortSystemPage() {
               data-aos-duration="900"
             >
               <Image
-                src="/images/workshop/hero.jfif.jpeg"
+                src="/images/hero.jfif.jpeg"
                 alt="Professional Workshop"
                 fill
                 className="object-cover"
@@ -132,7 +132,7 @@ export default function ComfortSystemPage() {
               data-aos-duration="800"
             >
               <Image
-                src="/images/workshop/ac.jfif.jpeg"
+                src="/images/ac.jfif.jpeg"
                 alt="Comfort System AC Repair"
                 fill
                 className="object-cover"
@@ -200,7 +200,7 @@ export default function ComfortSystemPage() {
               data-aos-duration="800"
             >
               <Image
-                src="/images/workshop/suspension.jfif.jpeg"
+                src="/images/suspension.jfif.jpeg"
                 alt="Suspension System Repair"
                 fill
                 className="object-cover"
@@ -211,86 +211,6 @@ export default function ComfortSystemPage() {
           </div>
         </div>
       </section>
-
-      {/* ─── EXPANSION-READY ADDITIONAL SERVICE SLOTS ─── */}
-      {/* These are placeholder blocks ready for Engine Management, ECU, Gearbox, Radiator, Battery */}
-      {/* <section className="py-[100px] bg-white border-b border-gray-100 overflow-hidden">
-        <div className="container mx-auto max-w-[1200px] px-6">
-          <div className="text-center mb-16" data-aos="fade-up">
-            <span className="inline-block text-sm font-bold uppercase tracking-[0.25em] text-primary mb-3">
-              More Workshop Services
-            </span>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold uppercase tracking-tight text-black mb-4">
-              Our Full Repair Capabilities
-            </h2>
-            <div className="w-12 h-[3px] bg-primary mx-auto mb-6" />
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-[1.7]">
-              In addition to comfort and suspension systems, our workshop covers
-              the full spectrum of German automotive repair.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Engine Management System",
-                desc: "Advanced ECU diagnostics, sensor calibration, and full engine management repair by certified technicians.",
-                href: "/services/workshop/engine-management-system",
-              },
-              {
-                title: "ECU Repair",
-                desc: "Dealer-level ECU programming, re-flashing, and repair to resolve every electronic management fault.",
-                href: "/services/workshop/engine-management-system#ecu",
-              },
-              {
-                title: "Gearbox Repair",
-                desc: "Automatic and dual-clutch transmission rebuild, fluid replacement, and fault resolution.",
-                href: "/services/workshop/engine-management-system#gearbox",
-              },
-              {
-                title: "Radiator Service",
-                desc: "High-pressure coolant flushing, leak repair, and radiator replacement using OEM-spec components.",
-                href: "/services/workshop/engine-management-system#radiator",
-              },
-              {
-                title: "Battery Replacement",
-                desc: "OEM-coded battery installation with full electrical-system health check and warranty.",
-                href: "/services/workshop/engine-management-system#battery",
-              },
-              {
-                title: "Brake System",
-                desc: "Complete brake inspection, pad & rotor replacement, and brake fluid service for total stopping confidence.",
-                href: "/contact",
-              },
-            ].map((s, i) => (
-              <div
-                key={i}
-                className="border border-gray-200 p-8 hover:border-primary/40 transition-colors"
-                data-aos="fade-up"
-                data-aos-delay={String(i * 60)}
-              >
-                <span className="text-4xl font-black text-gray-100 block mb-4 select-none">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="font-heading text-xl font-bold uppercase text-black mb-3">
-                  {s.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-[1.7] mb-6">
-                  {s.desc}
-                </p>
-                <Link href={s.href}>
-                  <Button
-                    variant="outline"
-                    className="border-primary text-primary hover:bg-primary hover:text-white rounded-none text-sm font-bold uppercase tracking-wider px-6 py-3 transition-all w-full"
-                  >
-                    Learn More
-                  </Button>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* ─── GET IN TOUCH ─── */}
       <section className="py-24 bg-black text-white" id="contact">

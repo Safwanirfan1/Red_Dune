@@ -54,7 +54,7 @@ export default function StopGoPage() {
               data-aos-duration="900"
             >
               <Image
-                src="/images/wheel/car.jfif.jpeg"
+                src="/images/car.jfif.jpeg"
                 alt="Stop & Go Complete Car Service"
                 fill
                 className="object-cover"
@@ -112,7 +112,7 @@ export default function StopGoPage() {
               data-aos-duration="800"
             >
               <Image
-                src="/images/wheel/stop.jfif.jpeg"
+                src="/images/stop.jfif.jpeg"
                 alt="Comprehensive Car Care"
                 fill
                 className="object-cover"

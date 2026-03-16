@@ -55,7 +55,7 @@ export const RecoveryServices = () => {
               data-aos-duration="1000"
             >
               <Image
-                src="/images/recovery/nop 1.jfif"
+                src="/images/nop 1.jfif"
                 alt="Car Recovery Service Dubai"
                 fill
                 className="object-cover"
@@ -106,7 +106,7 @@ export const RecoveryServices = () => {
               data-aos-duration="1000"
             >
               <Image
-                src="/images/recovery/ser (2).jpg"
+                src="/images/ser (2).jpg"
                 alt="Flatbed Towing Dubai"
                 fill
                 className="object-cover"
@@ -155,7 +155,7 @@ export const RecoveryServices = () => {
               data-aos-duration="1000"
             >
               <Image
-                src="/images/recovery/ser (1).jpg"
+                src="/images/ser (1).jpg"
                 alt="Reliable Car Recovery Dubai"
                 fill
                 className="object-cover"
@@ -242,10 +242,10 @@ export const RecoveryServices = () => {
         <div className="container mx-auto max-w-[1200px] px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { key: "luxury", img: "/images/recovery/car.jpg" },
-              { key: "suv", img: "/images/recovery/car (2).jpg" },
-              { key: "ev", img: "/images/recovery/car (3).jpg" },
-              { key: "commercial", img: "/images/recovery/car (1).jpg" },
+              { key: "luxury", img: "/images/car.jpg" },
+              { key: "suv", img: "/images/car (2).jpg" },
+              { key: "ev", img: "/images/car (3).jpg" },
+              { key: "commercial", img: "/images/car (1).jpg" },
             ].map((item, i) => (
               <div
                 key={i}

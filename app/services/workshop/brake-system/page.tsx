@@ -55,7 +55,7 @@ export default function BrakeSystemPage() {
               data-aos-duration="900"
             >
               <Image
-                src="/images/brake/hero.jpg.jpeg"
+                src="/images/hero.jpg.jpeg"
                 alt="Brake System Inspection"
                 fill
                 className="object-cover"
@@ -179,7 +179,7 @@ export default function BrakeSystemPage() {
               data-aos-duration="800"
             >
               <Image
-                src="/images/brake/abs.jfif.jpeg"
+                src="/images/abs.jfif.jpeg"
                 alt="ABS Diagnostics"
                 fill
                 className="object-cover"

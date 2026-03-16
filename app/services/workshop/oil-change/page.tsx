@@ -54,7 +54,7 @@ export default function OilChangePage() {
               data-aos-duration="900"
             >
               <Image
-                src="/images/oil/oil1.jfif.jpeg"
+                src="/images/oil1.jfif.jpeg"
                 alt="Engine Oil Change Service"
                 fill
                 className="object-cover"
@@ -118,7 +118,7 @@ export default function OilChangePage() {
               data-aos-duration="800"
             >
               <Image
-                src="/images/oil/oil2.jfif.jpeg"
+                src="/images/oil2.jfif.jpeg"
                 alt="Oil Change Workshop"
                 fill
                 className="object-cover"
@@ -302,7 +302,7 @@ export default function OilChangePage() {
               data-aos-duration="800"
             >
               <Image
-                src="/images/oil/oil3.jfif.jpeg"
+                src="/images/oil3.jfif.jpeg"
                 alt="Engine Oil Types"
                 fill
                 className="object-cover"

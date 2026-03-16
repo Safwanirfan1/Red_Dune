@@ -55,7 +55,7 @@ export default function FuelInjectionPage() {
               data-aos-duration="900"
             >
               <Image
-                src="/images/fuel/fuel1.jfif.jpeg"
+                src="/images/fuel1.jfif.jpeg"
                 alt="Fuel Injector Cleaning Service"
                 fill
                 className="object-cover"
@@ -133,7 +133,7 @@ export default function FuelInjectionPage() {
               data-aos-duration="800"
             >
               <Image
-                src="/images/fuel/fuel2.jfif.jpeg"
+                src="/images/fuel2.jfif.jpeg"
                 alt="Fuel Injection Diagnostics"
                 fill
                 className="object-cover"
@@ -253,7 +253,7 @@ export default function FuelInjectionPage() {
               data-aos-duration="800"
             >
               <Image
-                src="/images/fuel/fuel3.jfif.jpeg"
+                src="/images/fuel3.jfif.jpeg"
                 alt="Fuel System Inspection"
                 fill
                 className="object-cover"

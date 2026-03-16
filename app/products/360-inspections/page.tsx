@@ -43,7 +43,7 @@ export default function InspectionsPage() {
       <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/360/ins1.jpeg"
+            src="/images/ins1.jpeg"
             alt="Hero Background"
             fill
             className="opacity-30 mix-blend-overlay object-cover"
@@ -98,7 +98,7 @@ export default function InspectionsPage() {
               <div className="absolute inset-0 transform translate-x-4 translate-y-4 border border-primary/30 transition-transform group-hover:translate-x-2 group-hover:translate-y-2" />
               <div className="relative z-10 w-full h-full">
                 <Image
-                  src="/images/360/ins2.jpeg"
+                  src="/images/ins2.jpeg"
                   alt="Detailed Inspection Process"
                   fill
                   className="object-cover"
@@ -129,7 +129,7 @@ export default function InspectionsPage() {
               <div className="absolute inset-0 transform -translate-x-4 translate-y-4 border border-primary/30 transition-transform group-hover:-translate-x-2 group-hover:translate-y-2" />
               <div className="relative z-10 w-full h-full">
                 <Image
-                  src="/images/360/ins3.jpeg"
+                  src="/images/ins3.jpeg"
                   alt="Expert Team & High-Tech Tools"
                   fill
                   className="object-cover"
@@ -194,7 +194,7 @@ export default function InspectionsPage() {
               <div className="absolute inset-0 transform translate-x-4 translate-y-4 border border-primary/30 transition-transform group-hover:translate-x-2 group-hover:translate-y-2" />
               <div className="relative z-10 w-full h-full">
                 <Image
-                  src="/images/360/ins4.png"
+                  src="/images/ins1.JPEG"
                   alt="Inspection Workflow"
                   fill
                   className="object-cover"
@@ -225,7 +225,7 @@ export default function InspectionsPage() {
               <div className="absolute inset-0 transform -translate-x-4 translate-y-4 border border-primary/30 transition-transform group-hover:-translate-x-2 group-hover:translate-y-2" />
               <div className="relative z-10 w-full h-full">
                 <Image
-                  src="/images/360/vir360-img-3.png"
+                  src="/images/ins4.png"
                   alt="Best Car Assurance"
                   fill
                   className="object-cover"

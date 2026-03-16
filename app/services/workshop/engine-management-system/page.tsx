@@ -129,7 +129,7 @@ export default function EngineManagementSystemPage() {
                 data-aos="fade-left"
               >
                 <Image
-                  src="/images/engin/engin.jfif.jpeg"
+                  src="/images/engin.jfif.jpeg"
                   alt="Engine Management System"
                   fill
                   className="object-cover"
@@ -195,7 +195,7 @@ export default function EngineManagementSystemPage() {
                 data-aos="fade-right"
               >
                 <Image
-                  src="/images/engin/ecu.png"
+                  src="/images/ecu.png"
                   alt="ECU Repair"
                   fill
                   className="object-cover"
@@ -264,7 +264,7 @@ export default function EngineManagementSystemPage() {
                 data-aos="fade-left"
               >
                 <Image
-                  src="/images/engin/gear box.jfif.jpeg"
+                  src="/images/gear box.jfif.jpeg"
                   alt="Recovery Vehicle"
                   fill
                   className="object-cover object-bottom"
@@ -333,7 +333,7 @@ export default function EngineManagementSystemPage() {
                 data-aos="fade-right"
               >
                 <Image
-                  src="/images/engin/radiator.jfif.jpeg"
+                  src="/images/radiator.jfif.jpeg"
                   alt="Radiator Service"
                   fill
                   className="object-cover"
@@ -412,7 +412,7 @@ export default function EngineManagementSystemPage() {
                 data-aos="fade-left"
               >
                 <Image
-                  src="/images/engin/battery.jfif.jpeg"
+                  src="/images/battery.jfif.jpeg"
                   alt="Battery Replacement"
                   fill
                   className="object-cover"
